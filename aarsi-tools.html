@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aarsi AI Education – Transforming Education With AI & Smart Technology</title>
+<meta name="description" content="Aarsi AI Education helps teachers, schools, and students use AI, automation, and digital tools to improve learning and productivity. School ERP, AI Tools, GSEB Solutions.">
+<meta property="og:title" content="Aarsi AI Education – AI-Powered EdTech Platform">
+<meta property="og:description" content="Premium educational technology platform for teachers, schools & students.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1E3A8A;--blue-light:#2563EB;--blue-glow:#3B82F6;
+  --red:#DC2626;--red-light:#EF4444;
+  --navy:#0F172A;--navy-mid:#1E293B;
+  --bg:#F8FAFC;--bg2:#EFF6FF;
+  --text:#334155;--text-dark:#0F172A;--text-muted:#64748B;
+  --white:#FFFFFF;
+  --grad-hero:linear-gradient(135deg,#0F172A 0%,#1E3A8A 50%,#0F172A 100%);
+  --glass:rgba(255,255,255,0.07);
+  --glass-border:rgba(255,255,255,0.12);
+  --shadow-card:0 4px 24px rgba(30,58,138,0.10);
+  --shadow-hover:0 12px 40px rgba(30,58,138,0.22);
+  --radius:16px;--radius-sm:10px;
+  --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Poppins',sans-serif;color:var(--text-dark)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--blue-light);border-radius:3px}
+
+/* ── READING PROGRESS ── */
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue-light),var(--red));width:0%;z-index:9999;transition:width 0.1s}
+
+/* ── NAVBAR ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:var(--transition)}
+nav.scrolled{background:rgba(15,23,42,0.92);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 30px rgba(0,0,0,0.3)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.3rem;color:var(--white)}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--blue-light),var(--blue-glow));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.logo span{color:var(--blue-glow)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.8);font-size:.9rem;font-weight:500;transition:var(--transition);position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--blue-glow);transition:var(--transition)}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:linear-gradient(135deg,var(--blue-light),var(--blue-glow));color:var(--white)!important;padding:8px 20px;border-radius:8px;font-weight:600!important}
+.nav-cta::after{display:none!important}
+.dark-toggle{background:var(--glass);border:1px solid var(--glass-border);color:var(--white);border-radius:8px;padding:7px 10px;cursor:pointer;font-size:1rem;transition:var(--transition)}
+.dark-toggle:hover{background:rgba(255,255,255,0.15)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:var(--transition)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:var(--grad-hero);position:relative;display:flex;align-items:center;overflow:hidden;padding:100px 0 60px}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.08) 1px,transparent 1px);background-size:50px 50px;opacity:.6}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);animation:orbFloat 8s ease-in-out infinite}
+.hero-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(37,99,235,0.35),transparent 70%);top:-150px;right:-100px;animation-delay:0s}
+.hero-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(220,38,38,0.2),transparent 70%);bottom:-100px;left:-80px;animation-delay:-4s}
+.hero-orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(59,130,246,0.25),transparent 70%);top:40%;left:40%;animation-delay:-2s}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+.floating-el{position:absolute;animation:floatEl 6s ease-in-out infinite;opacity:.7}
+.fe1{top:15%;left:8%;animation-delay:0s;font-size:2rem}
+.fe2{top:25%;right:12%;animation-delay:-1.5s;font-size:1.8rem}
+.fe3{bottom:30%;left:5%;animation-delay:-3s;font-size:1.5rem}
+.fe4{bottom:20%;right:8%;animation-delay:-0.8s;font-size:2.2rem}
+.fe5{top:60%;left:15%;animation-delay:-4s;font-size:1.3rem}
+.fe6{top:10%;right:30%;animation-delay:-2.5s;font-size:1.6rem}
+@keyframes floatEl{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-15px) rotate(5deg)}}
+.hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);border-radius:50px;padding:6px 16px;font-size:.8rem;color:var(--blue-glow);font-weight:600;margin-bottom:20px;animation:fadeUp .8s ease forwards}
+.hero-badge::before{content:'🤖';font-size:1rem}
+.hero-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:20px;animation:fadeUp .8s .15s ease forwards;opacity:0}
+.hero-title span{background:linear-gradient(135deg,var(--blue-glow),#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:36px;animation:fadeUp .8s .3s ease forwards;opacity:0}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;animation:fadeUp .8s .45s ease forwards;opacity:0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;border:none;transition:var(--transition);font-family:'DM Sans',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--blue-light),var(--blue-glow));color:var(--white);box-shadow:0 4px 20px rgba(37,99,235,0.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,0.55)}
+.btn-red{background:linear-gradient(135deg,var(--red),var(--red-light));color:var(--white);box-shadow:0 4px 20px rgba(220,38,38,0.35)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(220,38,38,0.5)}
+.btn-glass{background:var(--glass);border:1px solid var(--glass-border);color:var(--white);backdrop-filter:blur(10px)}
+.btn-glass:hover{background:rgba(255,255,255,0.15);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:28px;margin-top:40px;animation:fadeUp .8s .6s ease forwards;opacity:0}
+.stat{text-align:center}
+.stat-num{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:800;color:var(--white)}
+.stat-num span{color:var(--blue-glow)}
+.stat-label{font-size:.75rem;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:.05em}
+.stat-divider{width:1px;background:rgba(255,255,255,0.15);align-self:stretch}
+.hero-visual{position:relative;animation:fadeUp .8s .2s ease forwards;opacity:0}
+.hero-card-main{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);border-radius:20px;padding:28px;position:relative}
+.hcm-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.hcm-title{font-family:'Poppins',sans-serif;font-weight:700;color:var(--white);font-size:1rem}
+.hcm-badge{background:rgba(34,197,94,0.2);color:#4ADE80;font-size:.72rem;padding:3px 10px;border-radius:20px;font-weight:600}
+.hcm-chart{display:flex;align-items:flex-end;gap:6px;height:70px;margin-bottom:16px}
+.bar{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--blue-glow),var(--blue-light));animation:barGrow 1.5s ease forwards;opacity:0}
+@keyframes barGrow{from{height:0;opacity:0}to{opacity:1}}
+.bar:nth-child(2){background:linear-gradient(180deg,#60A5FA,var(--blue));animation-delay:.1s}
+.bar:nth-child(3){background:linear-gradient(180deg,var(--red-light),var(--red));animation-delay:.2s}
+.bar:nth-child(4){background:linear-gradient(180deg,#A78BFA,#7C3AED);animation-delay:.3s}
+.bar:nth-child(5){background:linear-gradient(180deg,#34D399,#059669);animation-delay:.4s}
+.bar:nth-child(6){animation-delay:.5s}
+.bar:nth-child(7){animation-delay:.6s}
+.hcm-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.tool-chip{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 12px;font-size:.75rem;color:rgba(255,255,255,0.8);display:flex;align-items:center;gap:6px}
+.hero-card-sm{position:absolute;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(15px);border-radius:14px;padding:14px 18px}
+.hcs1{top:-20px;right:-20px;animation:floatEl 5s ease-in-out infinite;font-size:.8rem;color:var(--white);white-space:nowrap}
+.hcs2{bottom:-15px;left:-15px;animation:floatEl 6s 1s ease-in-out infinite;font-size:.8rem;color:var(--white);white-space:nowrap}
+.hcs-icon{font-size:1.2rem;margin-bottom:4px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTION COMMON ── */
+section{padding:80px 0}
+.section-tag{display:inline-block;background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(59,130,246,0.1));border:1px solid rgba(37,99,235,0.2);color:var(--blue-light);font-size:.75rem;font-weight:700;padding:5px 14px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;margin-bottom:12px;line-height:1.2}
+.section-title span{background:linear-gradient(135deg,var(--blue),var(--blue-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-sub{color:var(--text-muted);font-size:.95rem;max-width:580px;line-height:1.7;margin-bottom:48px}
+.center{text-align:center}
+.center .section-sub{margin:0 auto 48px}
+
+/* ── CATEGORIES ── */
+.categories{background:var(--white)}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+@media(max-width:1100px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+.cat-card{background:var(--bg);border:1px solid #E2E8F0;border-radius:var(--radius);padding:22px 18px;transition:var(--transition);cursor:pointer;position:relative;overflow:hidden}
+.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue),var(--blue-glow));opacity:0;transition:var(--transition)}
+.cat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);border-color:transparent}
+.cat-card:hover::before{opacity:1}
+.cat-card:hover *{color:var(--white)!important;position:relative;z-index:1}
+.cat-card:hover .cat-arrow{background:rgba(255,255,255,0.2);color:var(--white)}
+.cat-icon{font-size:2rem;margin-bottom:14px;display:block;position:relative;z-index:1}
+.cat-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;color:var(--text-dark);margin-bottom:6px;position:relative;z-index:1}
+.cat-desc{font-size:.78rem;color:var(--text-muted);line-height:1.5;position:relative;z-index:1;margin-bottom:14px}
+.cat-arrow{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#EFF6FF;border-radius:6px;color:var(--blue);font-size:.9rem;transition:var(--transition);position:relative;z-index:1}
+
+/* ── BLOG ── */
+.blog-section{background:var(--bg2)}
+.blog-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.filter-btn{padding:7px 18px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;border:1.5px solid #E2E8F0;background:var(--white);color:var(--text-muted);transition:var(--transition)}
+.filter-btn.active,.filter-btn:hover{background:var(--blue);border-color:var(--blue);color:var(--white)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+.blog-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);transition:var(--transition),opacity .3s ease;cursor:pointer}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.blog-thumb{height:180px;background:linear-gradient(135deg,var(--navy),var(--blue));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.blog-thumb.red{background:linear-gradient(135deg,#1E0A0A,var(--red))}
+.blog-thumb.purple{background:linear-gradient(135deg,#1E0A3A,#7C3AED)}
+.blog-thumb.green{background:linear-gradient(135deg,#0A1E0F,#059669)}
+.blog-thumb.orange{background:linear-gradient(135deg,#1E0F0A,#EA580C)}
+.blog-thumb.teal{background:linear-gradient(135deg,#0A1E1E,#0D9488)}
+.blog-thumb-badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);color:var(--white);font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px;border:1px solid rgba(255,255,255,0.2)}
+.blog-thumb-time{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.5);color:rgba(255,255,255,0.9);font-size:.7rem;padding:3px 9px;border-radius:20px}
+.blog-body{padding:18px}
+.blog-cat{font-size:.72rem;font-weight:700;color:var(--blue-light);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.blog-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;color:var(--text-dark);line-height:1.45;margin-bottom:10px}
+.blog-excerpt{font-size:.8rem;color:var(--text-muted);line-height:1.65;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blog-meta{display:flex;align-items:center;justify-content:space-between}
+.blog-author{display:flex;align-items:center;gap:8px}
+.author-av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-glow));display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--white);font-weight:700}
+.author-name{font-size:.75rem;color:var(--text-muted);font-weight:500}
+.blog-date{font-size:.72rem;color:var(--text-muted)}
+.blog-featured{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:900px){.blog-featured{grid-column:span 1;grid-template-columns:1fr}}
+.blog-featured .blog-thumb{height:100%;min-height:220px}
+
+/* ── AI TOOLS ── */
+.ai-tools{background:var(--navy);padding:80px 0}
+.ai-tools .section-title{color:var(--white)}
+.ai-tools .section-tag{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);color:var(--blue-glow)}
+.ai-tools .section-sub{color:rgba(255,255,255,0.6)}
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1000px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.tools-grid{grid-template-columns:1fr}}
+.tool-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px;transition:var(--transition);position:relative;overflow:hidden}
+.tool-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-light),var(--blue-glow));opacity:0;transition:var(--transition)}
+.tool-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(59,130,246,0.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+.tool-card:hover::after{opacity:1}
+.tool-icon{font-size:2.2rem;margin-bottom:14px;display:block}
+.tool-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;color:var(--white);margin-bottom:8px}
+.tool-desc{font-size:.78rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:16px}
+.tool-stats{display:flex;gap:14px;margin-bottom:16px}
+.tool-stat{font-size:.72rem;color:rgba(255,255,255,0.4)}
+.tool-stat strong{color:var(--blue-glow);font-weight:700}
+.tool-btn{width:100%;padding:9px;background:linear-gradient(135deg,rgba(37,99,235,0.2),rgba(59,130,246,0.2));border:1px solid rgba(59,130,246,0.3);color:var(--blue-glow);border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;transition:var(--transition);font-family:'DM Sans',sans-serif}
+.tool-btn:hover{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:var(--white);border-color:var(--blue-light)}
+
+/* ── TEACHER HUB ── */
+.teacher-hub{background:var(--white)}
+.hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:800px){.hub-grid{grid-template-columns:1fr}}
+.hub-visual{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:20px;padding:28px;position:relative;overflow:hidden}
+.hub-visual-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:30px 30px}
+.hub-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 16px;margin-bottom:10px;position:relative;z-index:1;transition:var(--transition)}
+.hub-card:hover{background:rgba(255,255,255,0.1);transform:translateX(4px)}
+.hub-card-row{display:flex;align-items:center;gap:12px}
+.hub-card-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--blue-light),var(--blue-glow));display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.hub-card-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:.85rem;color:var(--white);margin-bottom:2px}
+.hub-card-sub{font-size:.72rem;color:rgba(255,255,255,0.5)}
+.hub-badge{background:rgba(74,222,128,0.15);color:#4ADE80;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:auto;flex-shrink:0}
+.resource-list{display:flex;flex-direction:column;gap:14px}
+.resource-item{display:flex;align-items:flex-start;gap:14px;padding:16px;border:1px solid #E2E8F0;border-radius:var(--radius-sm);transition:var(--transition)}
+.resource-item:hover{border-color:var(--blue-light);background:var(--bg2)}
+.ri-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--bg2),#DBEAFE);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.ri-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:.88rem;color:var(--text-dark);margin-bottom:4px}
+.ri-sub{font-size:.77rem;color:var(--text-muted);line-height:1.5}
+.ri-badge{display:inline-block;background:linear-gradient(135deg,var(--bg2),#DBEAFE);color:var(--blue);font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:6px;margin-top:6px}
+
+/* ── STUDENT HUB ── */
+.student-hub{background:var(--bg2)}
+.student-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+@media(max-width:900px){.student-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.student-grid{grid-template-columns:1fr}}
+.student-card{background:var(--white);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-card);transition:var(--transition);cursor:pointer;border:2px solid transparent}
+.student-card:hover{border-color:var(--blue-light);transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.sc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sc-icon{font-size:2rem}
+.sc-badge{font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px}
+.sc-badge.new{background:rgba(220,38,38,0.1);color:var(--red)}
+.sc-badge.hot{background:rgba(234,88,12,0.1);color:#EA580C}
+.sc-badge.free{background:rgba(5,150,105,0.1);color:#059669}
+.sc-badge.pdf{background:rgba(124,58,237,0.1);color:#7C3AED}
+.sc-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;color:var(--text-dark);margin-bottom:6px}
+.sc-sub{font-size:.78rem;color:var(--text-muted);line-height:1.55;margin-bottom:14px}
+.sc-progress{background:#E2E8F0;border-radius:4px;height:4px;margin-bottom:8px}
+.sc-progress-bar{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--blue-glow))}
+.sc-progress-label{font-size:.7rem;color:var(--text-muted)}
+
+/* ── ERP SHOWCASE ── */
+.erp-section{background:var(--navy);padding:80px 0}
+.erp-section .section-title{color:var(--white)}
+.erp-section .section-tag{background:rgba(220,38,38,0.15);border-color:rgba(220,38,38,0.3);color:#FCA5A5}
+.erp-section .section-sub{color:rgba(255,255,255,0.6)}
+.erp-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:40px;align-items:center}
+@media(max-width:900px){.erp-grid{grid-template-columns:1fr}}
+.erp-features{display:flex;flex-direction:column;gap:16px}
+.erp-feat{display:flex;align-items:flex-start;gap:14px;padding:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;transition:var(--transition)}
+.erp-feat:hover{background:rgba(255,255,255,0.08);border-color:rgba(220,38,38,0.3)}
+.ef-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,rgba(220,38,38,0.2),rgba(239,68,68,0.2));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;border:1px solid rgba(220,38,38,0.2)}
+.ef-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:.88rem;color:var(--white);margin-bottom:4px}
+.ef-sub{font-size:.77rem;color:rgba(255,255,255,0.5)}
+.erp-dashboard{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:24px;overflow:hidden}
+.erp-dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.erp-dash-title{font-family:'Poppins',sans-serif;font-weight:700;color:var(--white);font-size:1rem}
+.erp-dash-dots{display:flex;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%}
+.dot-r{background:#EF4444}.dot-y{background:#F59E0B}.dot-g{background:#10B981}
+.erp-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.erp-stat-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 12px;text-align:center}
+.esc-val{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:800;color:var(--white)}
+.esc-label{font-size:.68rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.esc-trend{font-size:.68rem;color:#4ADE80;font-weight:700}
+.erp-chart-area{background:rgba(255,255,255,0.03);border-radius:10px;padding:16px;margin-bottom:16px}
+.eca-label{font-size:.72rem;color:rgba(255,255,255,0.5);margin-bottom:12px}
+.eca-bars{display:flex;align-items:flex-end;gap:4px;height:60px}
+.eca-bar{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--red-light),var(--red))}
+.erp-table{width:100%;border-collapse:collapse}
+.erp-table th{font-size:.7rem;color:rgba(255,255,255,0.4);text-align:left;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,0.07);text-transform:uppercase;letter-spacing:.05em}
+.erp-table td{font-size:.78rem;color:rgba(255,255,255,0.75);padding:8px;border-bottom:1px solid rgba(255,255,255,0.05)}.erp-table tr:hover td{background:rgba(255,255,255,0.04)}
+.status-badge{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px}
+.sb-active{background:rgba(74,222,128,0.15);color:#4ADE80}
+.sb-pend{background:rgba(251,191,36,0.15);color:#FBBF24}
+
+/* ── YOUTUBE ── */
+.youtube-section{background:var(--white);padding:80px 0}
+.yt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.yt-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.yt-grid{grid-template-columns:1fr}}
+.yt-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);transition:var(--transition);cursor:pointer}
+.yt-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.yt-thumb{height:160px;position:relative;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.yt-thumb.blue{background:linear-gradient(135deg,#0F172A,#1E3A8A)}
+.yt-thumb.dark{background:linear-gradient(135deg,#0F172A,#374151)}
+.yt-thumb.red2{background:linear-gradient(135deg,#1E0A0A,#991B1B)}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.yt-play-btn{width:52px;height:52px;background:rgba(255,0,0,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1.4rem;transition:var(--transition)}
+.yt-card:hover .yt-play-btn{transform:scale(1.15);background:rgba(255,0,0,1)}
+.yt-duration{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.75);color:var(--white);font-size:.7rem;padding:2px 8px;border-radius:4px}
+.yt-body{background:var(--white);padding:14px}
+.yt-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:.85rem;color:var(--text-dark);margin-bottom:6px;line-height:1.45}
+.yt-meta{display:flex;gap:12px;font-size:.72rem;color:var(--text-muted)}
+.yt-subscribe{display:flex;align-items:center;justify-content:center;margin-top:32px;gap:16px;flex-wrap:wrap}
+.yt-channel{display:flex;align-items:center;gap:12px}
+.yt-ch-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--red),var(--red-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.yt-ch-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;color:var(--text-dark)}
+.yt-ch-sub{font-size:.8rem;color:var(--text-muted)}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--bg2);padding:80px 0}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.testi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.testi-grid{grid-template-columns:1fr}}
+.testi-card{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-card);transition:var(--transition);position:relative}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.testi-quote{font-size:2.5rem;color:var(--blue-light);line-height:1;margin-bottom:12px;opacity:.3}
+.testi-text{font-size:.88rem;color:var(--text);line-height:1.75;margin-bottom:20px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.ta-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-glow));display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--white);font-weight:700;flex-shrink:0}
+.ta-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--text-dark)}
+.ta-role{font-size:.75rem;color:var(--text-muted)}
+.testi-stars{color:#F59E0B;font-size:.85rem;margin-top:8px}
+
+/* ── NEWSLETTER ── */
+.newsletter{background:linear-gradient(135deg,var(--navy),var(--blue));padding:80px 0;position:relative;overflow:hidden}
+.nl-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.05) 1px,transparent 1px);background-size:40px 40px}
+.nl-content{position:relative;z-index:1;text-align:center;max-width:580px;margin:0 auto}
+.nl-content .section-title{color:var(--white)}
+.nl-content p{color:rgba(255,255,255,0.7);margin-bottom:32px;font-size:.95rem;line-height:1.7}
+.nl-form{display:flex;gap:12px;max-width:440px;margin:0 auto}
+@media(max-width:500px){.nl-form{flex-direction:column}}
+.nl-input{flex:1;padding:13px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:var(--white);font-size:.9rem;backdrop-filter:blur(10px);font-family:'DM Sans',sans-serif}
+.nl-input::placeholder{color:rgba(255,255,255,0.4)}
+.nl-input:focus{outline:none;border-color:var(--blue-glow)}
+.nl-features{display:flex;gap:20px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.nl-feat{font-size:.78rem;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:6px}
+.nl-feat::before{content:'✓';color:#4ADE80;font-weight:700}
+
+/* ── COUNTERS ── */
+.counters{background:var(--navy-mid);padding:60px 0}
+.counters-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+@media(max-width:700px){.counters-grid{grid-template-columns:repeat(2,1fr)}}
+.counter-item{padding:20px}
+.counter-num{font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,var(--blue-glow),#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+.counter-label{font-size:.85rem;color:rgba(255,255,255,0.55);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand .logo{margin-bottom:14px}
+.footer-brand p{font-size:.82rem;color:rgba(255,255,255,0.5);line-height:1.7;max-width:250px;margin-bottom:20px}
+.social-links{display:flex;gap:10px}
+.social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:var(--transition)}
+.social-btn:hover{background:var(--blue-light);border-color:var(--blue-light)}
+.footer-col h4{font-family:'Poppins',sans-serif;font-weight:700;color:var(--white);font-size:.9rem;margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-links a{font-size:.82rem;color:rgba(255,255,255,0.5);transition:var(--transition)}
+.footer-links a:hover{color:var(--blue-glow);padding-left:4px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,0.35)}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{font-size:.78rem;color:rgba(255,255,255,0.4);transition:var(--transition)}
+.footer-bottom-links a:hover{color:var(--blue-glow)}
+
+/* ── CHATBOT ── */
+.chatbot-btn{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,var(--blue-light),var(--blue-glow));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 20px rgba(37,99,235,0.5);z-index:900;transition:var(--transition);animation:pulse 3s ease-in-out infinite}
+.chatbot-btn:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,99,235,0.7)}
+@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(37,99,235,0.5)}50%{box-shadow:0 4px 30px rgba(37,99,235,0.8),0 0 0 8px rgba(37,99,235,0.1)}}
+.chatbot-popup{position:fixed;bottom:95px;right:28px;width:300px;background:var(--white);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.2);z-index:900;overflow:hidden;transform:scale(0.9) translateY(20px);opacity:0;pointer-events:none;transition:var(--transition)}
+.chatbot-popup.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+.cp-header{background:linear-gradient(135deg,var(--blue),var(--blue-glow));padding:14px 16px;display:flex;align-items:center;gap:10px}
+.cp-avatar{width:32px;height:32px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.cp-title{font-family:'Poppins',sans-serif;font-weight:700;color:var(--white);font-size:.88rem}
+.cp-sub{font-size:.7rem;color:rgba(255,255,255,0.7)}
+.cp-close{margin-left:auto;background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;font-size:1.1rem;padding:2px}
+.cp-body{padding:16px;height:180px;overflow-y:auto}
+.cp-msg{font-size:.8rem;color:var(--text);background:var(--bg2);border-radius:8px 8px 8px 2px;padding:10px 12px;margin-bottom:10px;line-height:1.6}
+.cp-input-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #E2E8F0}
+.cp-input{flex:1;border:1px solid #E2E8F0;border-radius:8px;padding:8px 10px;font-size:.8rem;font-family:'DM Sans',sans-serif}
+.cp-send{background:var(--blue);color:var(--white);border:none;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:.9rem}
+
+/* ── MOBILE NAV ── */
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--navy);z-index:1100;padding:80px 28px 40px;transition:var(--transition);box-shadow:-10px 0 40px rgba(0,0,0,0.3)}
+.mobile-nav.open{right:0}
+.mobile-nav .nav-links{flex-direction:column;align-items:flex-start;gap:20px}
+.mobile-nav .nav-links a{color:rgba(255,255,255,0.8);font-size:1rem}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1050;opacity:0;pointer-events:none;transition:var(--transition)}
+.overlay.open{opacity:1;pointer-events:all}
+
+/* ── DARK MODE ── */
+body.dark{background:var(--navy);color:rgba(255,255,255,0.8)}
+body.dark h1,body.dark h2,body.dark h3,body.dark h4{color:var(--white)}
+body.dark .categories,body.dark .teacher-hub,body.dark .youtube-section{background:var(--navy-mid)}
+body.dark .cat-card{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1)}
+body.dark .cat-name{color:var(--white)}
+body.dark .cat-desc{color:rgba(255,255,255,0.5)}
+body.dark .blog-section{background:var(--navy)}
+body.dark .blog-card{background:rgba(255,255,255,0.04)}
+body.dark .blog-title{color:var(--white)}
+body.dark .student-hub{background:var(--navy)}
+body.dark .student-card{background:rgba(255,255,255,0.05)}
+body.dark .sc-title{color:var(--white)}
+body.dark .testi-card{background:rgba(255,255,255,0.04)}
+body.dark .yt-body{background:rgba(255,255,255,0.04)}
+body.dark .yt-title{color:var(--white)}
+body.dark .testimonials{background:var(--navy)}
+body.dark .chatbot-popup{background:var(--navy-mid)}
+body.dark .cp-msg{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8)}
+body.dark .cp-input-row{border-top-color:rgba(255,255,255,0.1)}
+body.dark .cp-input{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);color:var(--white)}
+body.dark .resource-item{border-color:rgba(255,255,255,0.1);background:rgba(255,255,255,0.04)}
+body.dark .ri-title{color:var(--white)}
+body.dark footer{background:#060D1F}
+
+/* ── ANIMATIONS & UTILITIES ── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-content{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .hero-stats{gap:16px}
+  .hub-grid{grid-template-columns:1fr}
+  .erp-grid{grid-template-columns:1fr}
+  .counters-grid{grid-template-columns:repeat(2,1fr)}
+}
+body.dark .newsletter{background:linear-gradient(135deg,#060D1F,#0F172A)}
+body.dark .nl-input{background:rgba(255,255,255,0.1);color:var(--white);border-color:rgba(255,255,255,0.2)}
+body.dark .counters{background:#0A0F1E}
+body.dark footer{background:#060D1F}
+body.dark .blog-card[data-cat]{background:rgba(255,255,255,0.04)}
+body.dark .section-title{color:var(--white)}
+body.dark .section-sub{color:rgba(255,255,255,0.6)}
+
+/* ── GANIT ERP SECTION ── */
+#erp-ganit{background:var(--white);padding:80px 0}
+body.dark #erp-ganit{background:var(--navy-mid)}
+.erp-ganit-wrap{background:#fbf7ee;border:3px solid #1a1f2e;box-shadow:8px 8px 0 #1a1f2e;overflow:hidden;border-radius:4px}
+body.dark .erp-ganit-wrap{background:#0e1218;border-color:#2a3142}
+.erp-ganit-header{border-bottom:3px double #1a1f2e;padding:18px 24px 14px;background:#fbf7ee;position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px}
+body.dark .erp-ganit-header{background:#0e1218;border-color:#2a3142}
+.erp-ganit-crest{width:52px;height:52px;border:2.5px solid #1a1f2e;background:#b8442c;color:#fbf7ee;display:grid;place-items:center;font-family:'Poppins',serif;font-weight:800;font-size:24px;transform:rotate(-3deg);box-shadow:4px 4px 0 #1a1f2e;flex-shrink:0}
+.erp-ganit-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(16px,2vw,22px);color:#1a1f2e;line-height:1.15}
+body.dark .erp-ganit-title{color:#e2e8f0}
+.erp-ganit-sub{font-size:12px;color:#6b6557;margin-top:2px;font-style:italic}
+body.dark .erp-ganit-sub{color:#94a3b8}
+.erp-ganit-chip{border:2px solid #1a1f2e;padding:7px 13px;font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:#d4a843;box-shadow:3px 3px 0 #1a1f2e;white-space:nowrap;color:#1a1f2e}
+/* GANIT TABS */
+.erp-ganit-nav{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid #1a1f2e;background:#f4ecdb;padding:0 20px}
+body.dark .erp-ganit-nav{background:#151c2c;border-color:#2a3142}
+.erp-gtab{border:none;background:transparent;padding:14px 20px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:#6b6557;cursor:pointer;border-right:1px solid rgba(26,31,46,0.15);position:relative;transition:all 0.2s;display:flex;align-items:center;gap:8px}
+.erp-gtab .gnum{font-weight:800;font-style:italic;color:#b8442c;font-size:16px}
+.erp-gtab:hover{background:#fbf7ee;color:#1a1f2e}
+.erp-gtab.active{background:#1a1f2e;color:#fbf7ee}
+.erp-gtab.active .gnum{color:#d4a843}
+.erp-gtab.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:4px;background:#b8442c}
+body.dark .erp-gtab{color:#94a3b8}
+body.dark .erp-gtab:hover{background:#1e293b;color:#e2e8f0}
+body.dark .erp-gtab.active{background:#d4a843;color:#1a1f2e}
+body.dark .erp-gtab.active .gnum{color:#1a1f2e}
+/* GANIT MODULES */
+.erp-gmodule{display:none;padding:28px 24px;animation:erpFadeIn 0.35s ease}
+.erp-gmodule.active{display:block}
+@keyframes erpFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.erpg-head{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin-bottom:22px}
+.erpg-num{font-family:'Poppins',sans-serif;font-weight:900;font-size:56px;line-height:0.85;color:#b8442c;border-right:3px solid #1a1f2e;padding-right:16px}
+body.dark .erpg-num{border-color:#2a3142}
+.erpg-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(18px,2.2vw,24px);color:#1a1f2e;line-height:1.2}
+body.dark .erpg-title{color:#e2e8f0}
+.erpg-desc{color:#6b6557;font-size:13px;margin-top:5px;max-width:680px;line-height:1.65}
+body.dark .erpg-desc{color:#94a3b8}
+/* GANIT INPUT CARD */
+.erpg-input-card{background:#fbf7ee;border:2.5px solid #1a1f2e;box-shadow:6px 6px 0 #1a1f2e;padding:20px 22px;margin-bottom:26px}
+body.dark .erpg-input-card{background:#0e1218;border-color:#2a3142;box-shadow:6px 6px 0 #2a3142}
+.erpg-input-row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.erpg-field{flex:1;min-width:160px}
+.erpg-field label{display:block;font-family:'Courier New',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#2c5e5a;margin-bottom:6px;font-weight:700}
+body.dark .erpg-field label{color:#34d399}
+.erpg-field input{width:100%;border:2px solid #1a1f2e;background:#f4ecdb;padding:11px 13px;font-family:'Courier New',monospace;font-size:17px;font-weight:600;color:#1a1f2e;transition:all 0.15s}
+.erpg-field input:focus{outline:none;background:#fff;box-shadow:4px 4px 0 #d4a843;transform:translate(-2px,-2px)}
+body.dark .erpg-field input{background:#151c2c;border-color:#2a3142;color:#e2e8f0}
+body.dark .erpg-field input:focus{background:#1e293b;box-shadow:4px 4px 0 #d4a843}
+.erpg-btn{border:2.5px solid #1a1f2e;background:#b8442c;color:#fbf7ee;padding:12px 24px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:4px 4px 0 #1a1f2e;transition:all 0.12s;white-space:nowrap}
+.erpg-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #1a1f2e}
+.erpg-btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #1a1f2e}
+.erpg-btn.sec{background:#f4ecdb;color:#1a1f2e}
+body.dark .erpg-btn{border-color:#2a3142;box-shadow:4px 4px 0 #2a3142}
+body.dark .erpg-btn.sec{background:#1e293b;color:#e2e8f0}
+.erpg-helper{font-size:12px;color:#6b6557;margin-top:8px;font-style:italic}
+body.dark .erpg-helper{color:#94a3b8}
+.erpg-error{color:#b8442c;font-weight:600;font-size:13px;margin-top:8px;display:none}
+/* GANIT PRESETS */
+.erpg-presets{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.erpg-pill{border:1.5px solid #1a1f2e;background:transparent;padding:5px 12px;font-family:'Courier New',monospace;font-size:12px;cursor:pointer;transition:all 0.15s;font-weight:600;color:#1a1f2e}
+.erpg-pill:hover{background:#1a1f2e;color:#fbf7ee}
+body.dark .erpg-pill{border-color:#2a3142;color:#94a3b8}
+body.dark .erpg-pill:hover{background:#2a3142;color:#e2e8f0}
+/* GANIT RESULTS */
+.erpg-result{background:#fbf7ee;border:2.5px solid #1a1f2e;box-shadow:6px 6px 0 #1a1f2e;padding:24px;margin-top:8px;display:none}
+body.dark .erpg-result{background:#0e1218;border-color:#2a3142;box-shadow:6px 6px 0 #2a3142}
+.erpg-result-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #1a1f2e;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;color:#1a1f2e}
+body.dark .erpg-result-title{border-color:#2a3142;color:#e2e8f0}
+.erpg-badge{font-family:'Courier New',monospace;font-size:10px;background:#1a1f2e;color:#fbf7ee;padding:3px 9px;letter-spacing:1.5px;font-weight:500}
+body.dark .erpg-badge{background:#d4a843;color:#1a1f2e}
+/* tree */
+.erpg-tree-wrap{overflow:auto;padding:20px 10px;background:#f4ecdb;border:1.5px solid #1a1f2e;margin-bottom:18px;display:flex;justify-content:center}
+body.dark .erpg-tree-wrap{background:#151c2c;border-color:#2a3142}
+.erpg-tree-svg .g-node-rect{stroke:#1a1f2e;stroke-width:2.5;animation:gpop 0.4s ease backwards;transform-box:fill-box;transform-origin:center}
+.erpg-tree-svg .g-node-rect.gprime{fill:#b8442c}
+.erpg-tree-svg .g-node-rect.gcomposite{fill:#d4a843}
+.erpg-tree-svg .g-node-text{font-family:'Courier New',monospace;font-size:16px;font-weight:700;text-anchor:middle;dominant-baseline:central;fill:#1a1f2e;pointer-events:none;animation:gpop 0.4s ease backwards;transform-box:fill-box;transform-origin:center}
+.erpg-tree-svg .g-node-text.gprime-text{fill:#fbf7ee}
+.erpg-tree-svg .g-branch{stroke:#1a1f2e;stroke-width:2;stroke-linecap:round;animation:gfadeBranch 0.3s ease backwards}
+@keyframes gpop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes gfadeBranch{from{opacity:0}to{opacity:1}}
+.erpg-final-line{text-align:center;font-family:'Courier New',monospace;font-size:17px;font-weight:700;padding:16px;background:#1a1f2e;color:#fbf7ee;margin-top:14px;word-wrap:break-word}
+body.dark .erpg-final-line{background:#d4a843;color:#1a1f2e}
+.erpg-final-line .gsmall{font-size:12px;opacity:0.7;letter-spacing:1.5px;display:block;margin-bottom:4px}
+/* pf table */
+.erpg-pf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:20px}
+.erpg-pf-card{border:2px solid #1a1f2e;padding:14px;background:#f4ecdb}
+body.dark .erpg-pf-card{border-color:#2a3142;background:#151c2c}
+.erpg-pf-card h4{font-style:italic;font-size:16px;margin-bottom:8px;color:#2c5e5a}
+body.dark .erpg-pf-card h4{color:#34d399}
+.erpg-pf-eq{font-family:'Courier New',monospace;font-size:15px;font-weight:600;padding:6px 0;color:#1a1f2e}
+body.dark .erpg-pf-eq{color:#e2e8f0}
+.erpg-ans-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:500px){.erpg-ans-grid{grid-template-columns:1fr}}
+.erpg-ans-box{border:2.5px solid #1a1f2e;padding:18px;text-align:center}
+.erpg-ans-box.ghcf{background:#2c5e5a;color:#fbf7ee}
+.erpg-ans-box.glcm{background:#b8442c;color:#fbf7ee}
+.erpg-ans-box .glabel{font-family:'Courier New',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.85}
+.erpg-ans-box .gvalue{font-family:'Poppins',sans-serif;font-weight:900;font-size:32px;line-height:1.1;margin:5px 0}
+.erpg-ans-box .gformula{font-family:'Courier New',monospace;font-size:12px;opacity:.9}
+/* proof steps */
+.erpg-steps{counter-reset:gstep}
+.erpg-step{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed rgba(26,31,46,0.2);animation:gslideIn 0.4s ease backwards}
+body.dark .erpg-step{border-color:rgba(255,255,255,0.1)}
+@keyframes gslideIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.erpg-step:last-child{border-bottom:none}
+.erpg-step::before{counter-increment:gstep;content:counter(gstep);width:36px;height:36px;border:2.5px solid #1a1f2e;background:#d4a843;display:grid;place-items:center;font-family:'Poppins',sans-serif;font-weight:900;font-size:16px;color:#1a1f2e;flex-shrink:0}
+body.dark .erpg-step::before{border-color:#2a3142;background:#b8442c;color:#fbf7ee}
+.erpg-step-body .ggu{font-size:14.5px;line-height:1.75;color:#1a1f2e}
+body.dark .erpg-step-body .ggu{color:#e2e8f0}
+.erpg-step-body .gmath{font-family:'Courier New',monospace;background:#f4ecdb;padding:9px 13px;margin-top:7px;border-left:4px solid #b8442c;font-size:14px;font-weight:600;overflow-x:auto;color:#1a1f2e}
+body.dark .erpg-step-body .gmath{background:#151c2c;color:#e2e8f0}
+.erpg-step-body .gnote{font-style:italic;color:#6b6557;font-size:12px;margin-top:5px}
+body.dark .erpg-step-body .gnote{color:#94a3b8}
+.erpg-conclusion{margin-top:18px;padding:18px;background:#1a1f2e;color:#fbf7ee;text-align:center;font-family:'Poppins',sans-serif;font-size:16px;font-weight:600}
+body.dark .erpg-conclusion{background:#d4a843;color:#1a1f2e}
+.erpg-qed{display:inline-block;margin-left:10px;border:1.5px solid currentColor;padding:2px 7px;font-style:italic;font-size:13px}
+.erpg-verify{margin-top:16px;padding:13px 16px;background:#f4ecdb;border-left:5px solid #2c5e5a;font-size:13px;line-height:1.7;color:#1a1f2e}
+body.dark .erpg-verify{background:#151c2c;color:#e2e8f0}
+@media(max-width:640px){.erp-ganit-header{grid-template-columns:auto 1fr}.erp-ganit-chip{display:none}.erpg-num{font-size:40px}.erp-gtab{padding:11px 13px;font-size:12px}.erp-ganit-nav{padding:0 10px}}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="logo"><div class="logo-icon">🎓</div>Aarsi <span>AI</span> Education</a>
+      <ul class="nav-links">
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#ai-tools">AI Tools</a></li>
+        <li><a href="#students">Students</a></li>
+        <li><a href="#erp">School ERP</a></li>
+        <li><a href="#erp-ganit">📐 ગણિત ERP</a></li>
+        <li><a href="#youtube">Tutorials</a></li>
+        <li><a href="#newsletter" class="nav-cta">Get Started →</a></li>
+      </ul>
+      <button class="dark-toggle" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+      <button class="hamburger" onclick="toggleNav()" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <ul class="nav-links">
+    <li><a href="#categories" onclick="toggleNav()">Categories</a></li>
+    <li><a href="#blog" onclick="toggleNav()">Blog</a></li>
+    <li><a href="#ai-tools" onclick="toggleNav()">AI Tools</a></li>
+    <li><a href="#students" onclick="toggleNav()">Students</a></li>
+    <li><a href="#erp" onclick="toggleNav()">School ERP</a></li>
+    <li><a href="#erp-ganit" onclick="toggleNav()">📐 ગણિત ERP</a></li>
+    <li><a href="#youtube" onclick="toggleNav()">Tutorials</a></li>
+    <li><a href="#newsletter" class="nav-cta" onclick="toggleNav()">Get Started →</a></li>
+  </ul>
+</div>
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+  <span class="floating-el fe1">📚</span>
+  <span class="floating-el fe2">🤖</span>
+  <span class="floating-el fe3">🎓</span>
+  <span class="floating-el fe4">💡</span>
+  <span class="floating-el fe5">📊</span>
+  <span class="floating-el fe6">✏️</span>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">AI-Powered EdTech Platform for Gujarat</div>
+        <h1 class="hero-title">Transforming Education With <span>AI & Smart Technology</span></h1>
+        <p class="hero-sub">Helping teachers, principals, schools, and students use AI, automation, and digital tools to improve learning and productivity — from GSEB to higher education.</p>
+        <div class="hero-btns">
+          <a href="#ai-tools" class="btn btn-primary">🤖 Explore AI Tools</a>
+          <a href="#students" class="btn btn-red">🎓 Student Learning</a>
+          <a href="#youtube" class="btn btn-glass">▶ Watch Tutorials</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-num">50<span>K+</span></div><div class="stat-label">Students</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><div class="stat-num">5<span>K+</span></div><div class="stat-label">Teachers</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><div class="stat-num">300<span>+</span></div><div class="stat-label">Schools</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><div class="stat-num">214<span>+</span></div><div class="stat-label">AI Tools</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <div class="hcm-header"><span class="hcm-title">Platform Analytics</span><span class="hcm-badge">● Live</span></div>
+          <div class="hcm-chart">
+            <div class="bar" style="height:40%"></div>
+            <div class="bar" style="height:65%"></div>
+            <div class="bar" style="height:50%"></div>
+            <div class="bar" style="height:85%"></div>
+            <div class="bar" style="height:70%"></div>
+            <div class="bar" style="height:90%"></div>
+            <div class="bar" style="height:75%"></div>
+          </div>
+          <div class="hcm-tools">
+            <div class="tool-chip">📝 Lesson Planner</div>
+            <div class="tool-chip">📊 ERP System</div>
+            <div class="tool-chip">🎯 GSEB Notes</div>
+            <div class="tool-chip">🤖 AI Prompts</div>
+          </div>
+        </div>
+        <div class="hero-card-sm hcs1"><div class="hcs-icon">🏆</div><strong style="color:var(--white);font-size:.85rem">4.9★</strong><div style="font-size:.65rem;color:rgba(255,255,255,0.6)">Top EdTech Platform</div></div>
+        <div class="hero-card-sm hcs2"><div class="hcs-icon">🚀</div><strong style="color:var(--white);font-size:.85rem">New</strong><div style="font-size:.65rem;color:rgba(255,255,255,0.6)">AI Tools Updated</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTERS -->
+<div class="counters" id="counters-section">
+  <div class="container">
+    <div class="counters-grid">
+      <div class="counter-item"><span class="counter-num" data-target="50000">0</span><div class="counter-label">Active Students</div></div>
+      <div class="counter-item"><span class="counter-num" data-target="5000">0</span><div class="counter-label">Educators</div></div>
+      <div class="counter-item"><span class="counter-num" data-target="300">0</span><div class="counter-label">Partner Schools</div></div>
+      <div class="counter-item"><span class="counter-num" data-target="214">0</span><div class="counter-label">AI Tools</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="center">
+      <span class="section-tag">Explore Topics</span>
+      <h2 class="section-title">What Would You Like to <span>Learn Today?</span></h2>
+      <p class="section-sub">Browse our comprehensive educational categories designed for teachers, students, and school administrators.</p>
+    </div>
+    <div class="cat-grid fade-in">
+      <div class="cat-card" onclick="scrollToSection('ai-tools')" role="button" tabindex="0" style="cursor:pointer" onkeydown="if(event.key==='Enter')this.click()"><span class="cat-icon">🤖</span><div class="cat-name">AI For Teachers</div><div class="cat-desc">Leverage AI to automate tasks, plan lessons & enhance teaching.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('erp-ganit')" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">📐</span><div class="cat-name">ગણિત ERP</div><div class="cat-desc">Factor Tree, HCF/LCM, Irrational Proof — interactive Gujarati math tools.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('erp')" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">🏫</span><div class="cat-name">School ERP</div><div class="cat-desc">Complete digital school management from admission to results.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('students')" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">🎓</span><div class="cat-name">Student Hub</div><div class="cat-desc">GSEB, SSC, HSC notes, MCQs, formulas and exam resources.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('ai-tools');setTimeout(()=>openTool('prompt'),600)" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">💬</span><div class="cat-name">AI Prompts</div><div class="cat-desc">Curated prompt library for educators and administrators.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('youtube')" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">▶️</span><div class="cat-name">YouTube Tutorials</div><div class="cat-desc">Step-by-step video guides for all educational tools.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('erp')" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">📋</span><div class="cat-name">Digital Management</div><div class="cat-desc">Automate attendance, circulars, timetables and more.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('students')" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">📐</span><div class="cat-name">GSEB Solutions</div><div class="cat-desc">Chapter-wise solutions, past papers and model answers.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('teachers')" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">⚡</span><div class="cat-name">Teacher Productivity</div><div class="cat-desc">Templates, letter formats, and admin tools for educators.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('ai-tools');setTimeout(()=>openTool('circular'),600)" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">🔄</span><div class="cat-name">Automation</div><div class="cat-desc">Automate repetitive school tasks with smart workflows.</div><span class="cat-arrow">→</span></div>
+      <div class="cat-card" onclick="scrollToSection('ai-tools')" role="button" tabindex="0" style="cursor:pointer"><span class="cat-icon">🧑‍💻</span><div class="cat-name">AI Classroom</div><div class="cat-desc">Interactive AI tools designed for the modern classroom.</div><span class="cat-arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:12px">
+      <div><span class="section-tag">Latest Articles</span><h2 class="section-title">Insights & <span>Tutorials</span></h2></div>
+      <a href="#blog" class="btn btn-glass" style="background:var(--white);color:var(--blue);border:1.5px solid #E2E8F0;margin-bottom:12px">View All Articles →</a>
+    </div>
+    <div class="blog-filters">
+      <button class="filter-btn active" data-cat="all" onclick="filterBlog(this,'all')">All</button>
+      <button class="filter-btn" data-cat="ai" onclick="filterBlog(this,'ai')">AI Tools</button>
+      <button class="filter-btn" data-cat="erp" onclick="filterBlog(this,'erp')">School ERP</button>
+      <button class="filter-btn" data-cat="gseb" onclick="filterBlog(this,'gseb')">GSEB</button>
+      <button class="filter-btn" data-cat="teacher" onclick="filterBlog(this,'teacher')">Teacher Tips</button>
+      <button class="filter-btn" data-cat="student" onclick="filterBlog(this,'student')">Student Resources</button>
+    </div>
+    <div class="blog-grid fade-in">
+      <div class="blog-card blog-featured" data-cat="ai">
+        <div class="blog-thumb blue"><span>🤖</span><span class="blog-thumb-badge">Featured</span><span class="blog-thumb-time">5 min read</span></div>
+        <div class="blog-body" style="padding:28px">
+          <div class="blog-cat">AI For Teachers</div>
+          <div class="blog-title" style="font-size:1.15rem;margin-bottom:14px">How ChatGPT Is Revolutionizing Lesson Planning for Gujarat Teachers in 2024</div>
+          <div class="blog-excerpt" style="-webkit-line-clamp:3">Discover how thousands of teachers across Gujarat are using AI tools to save 3-4 hours daily on lesson planning, circular writing, and student assessments. A complete practical guide with prompts and templates.</div>
+          <div class="blog-meta" style="margin-top:24px">
+            <div class="blog-author"><div class="author-av">AA</div><div><div class="author-name">Aarsi AI Team</div><div style="font-size:.72rem;color:var(--text-muted)">Educator & AI Specialist</div></div></div>
+            <div class="blog-date">Dec 15, 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card" data-cat="erp">
+        <div class="blog-thumb red"><span>📊</span><span class="blog-thumb-badge">Popular</span><span class="blog-thumb-time">4 min read</span></div>
+        <div class="blog-body">
+          <div class="blog-cat">School ERP</div>
+          <div class="blog-title">Top 5 School ERP Systems for Indian Schools in 2024</div>
+          <div class="blog-excerpt">A detailed comparison of the best school management software with pricing, features and real user reviews.</div>
+          <div class="blog-meta"><div class="blog-author"><div class="author-av">RK</div><div class="author-name">Rahul Kumar</div></div><div class="blog-date">Dec 12, 2024</div></div>
+        </div>
+      </div>
+      <div class="blog-card" data-cat="gseb">
+        <div class="blog-thumb purple"><span>📐</span><span class="blog-thumb-badge">GSEB</span><span class="blog-thumb-time">3 min read</span></div>
+        <div class="blog-body">
+          <div class="blog-cat">GSEB Solutions</div>
+          <div class="blog-title">GSEB Class 10 Maths Chapter 1: Real Numbers – Complete Solutions</div>
+          <div class="blog-excerpt">Step-by-step solved exercises with Gujarati medium explanations for all NCERT and GSEB questions.</div>
+          <div class="blog-meta"><div class="blog-author"><div class="author-av">SP</div><div class="author-name">Sonal Patel</div></div><div class="blog-date">Dec 10, 2024</div></div>
+        </div>
+      </div>
+      <div class="blog-card" data-cat="teacher">
+        <div class="blog-thumb green"><span>⚡</span><span class="blog-thumb-time">6 min read</span></div>
+        <div class="blog-body">
+          <div class="blog-cat">Teacher Productivity</div>
+          <div class="blog-title">50 AI Prompts Every Gujarat Teacher Should Know</div>
+          <div class="blog-excerpt">A curated collection of the most effective ChatGPT and Gemini prompts for classroom management and lesson design.</div>
+          <div class="blog-meta"><div class="blog-author"><div class="author-av">AA</div><div class="author-name">Aarsi AI Team</div></div><div class="blog-date">Dec 8, 2024</div></div>
+        </div>
+      </div>
+      <div class="blog-card" data-cat="student">
+        <div class="blog-thumb orange"><span>🎓</span><span class="blog-thumb-badge">New</span><span class="blog-thumb-time">7 min read</span></div>
+        <div class="blog-body">
+          <div class="blog-cat">Student Resources</div>
+          <div class="blog-title">HSC Board Exam 2025: Complete Preparation Strategy for Science Students</div>
+          <div class="blog-excerpt">Month-by-month study plan, important chapters, and scoring strategy for HSC Science stream students.</div>
+          <div class="blog-meta"><div class="blog-author"><div class="author-av">MJ</div><div class="author-name">Mahi Joshi</div></div><div class="blog-date">Dec 5, 2024</div></div>
+        </div>
+      </div>
+      <div class="blog-card" data-cat="teacher">
+        <div class="blog-thumb teal"><span>🔄</span><span class="blog-thumb-time">4 min read</span></div>
+        <div class="blog-body">
+          <div class="blog-cat">Automation</div>
+          <div class="blog-title">How to Automate School Attendance with Google Sheets & AI</div>
+          <div class="blog-excerpt">A free step-by-step guide to building an automated attendance system using Google Sheets and AI formulas — no coding needed.</div>
+          <div class="blog-meta"><div class="blog-author"><div class="author-av">DM</div><div class="author-name">Dev Mehta</div></div><div class="blog-date">Dec 3, 2024</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI TOOLS -->
+<section class="ai-tools" id="ai-tools">
+  <div class="container">
+    <div class="center">
+      <span class="section-tag" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);color:var(--blue-glow)">AI Toolkit</span>
+      <h2 class="section-title">Powerful AI Tools for <span>Educators</span></h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);margin:0 auto 48px">8 intelligent tools designed to transform how teachers create, manage, and deliver education.</p>
+    </div>
+    <div class="tools-grid fade-in">
+      <div class="tool-card"><span class="tool-icon">📝</span><div class="tool-name">AI Lesson Planner</div><div class="tool-desc">Generate complete lesson plans with objectives, activities & assessments in seconds.</div><div class="tool-stats"><div class="tool-stat"><strong>12K</strong> Uses</div><div class="tool-stat"><strong>4.9★</strong> Rated</div></div><button class="tool-btn" onclick="openTool('lesson')">Try Free →</button></div>
+      <div class="tool-card"><span class="tool-icon">📚</span><div class="tool-name">Homework Generator</div><div class="tool-desc">Create customized homework assignments tailored to student level and subject.</div><div class="tool-stats"><div class="tool-stat"><strong>8K</strong> Uses</div><div class="tool-stat"><strong>4.8★</strong> Rated</div></div><button class="tool-btn" onclick="openTool('homework')">Try Free →</button></div>
+      <div class="tool-card"><span class="tool-icon">🗓️</span><div class="tool-name">Timetable Generator</div><div class="tool-desc">Auto-generate conflict-free school timetables based on your requirements.</div><div class="tool-stats"><div class="tool-stat"><strong>3K</strong> Uses</div><div class="tool-stat"><strong>4.7★</strong> Rated</div></div><button class="tool-btn" onclick="openTool('timetable')">Try Free →</button></div>
+      <div class="tool-card"><span class="tool-icon">📄</span><div class="tool-name">Question Paper Generator</div><div class="tool-desc">Build chapter-wise, difficulty-sorted question papers instantly with AI.</div><div class="tool-stats"><div class="tool-stat"><strong>15K</strong> Uses</div><div class="tool-stat"><strong>5.0★</strong> Rated</div></div><button class="tool-btn" onclick="openTool('qpaper')">Try Free →</button></div>
+      <div class="tool-card"><span class="tool-icon">✅</span><div class="tool-name">Attendance Analyzer</div><div class="tool-desc">Paste attendance data and get AI-generated insights and improvement suggestions.</div><div class="tool-stats"><div class="tool-stat"><strong>5K</strong> Uses</div><div class="tool-stat"><strong>4.8★</strong> Rated</div></div><button class="tool-btn" onclick="openTool('attendance')">Try Free →</button></div>
+      <div class="tool-card"><span class="tool-icon">💬</span><div class="tool-name">AI Prompt Generator</div><div class="tool-desc">Get the perfect AI prompt for any educational task — instantly.</div><div class="tool-stats"><div class="tool-stat"><strong>20K</strong> Uses</div><div class="tool-stat"><strong>5.0★</strong> Rated</div></div><button class="tool-btn" onclick="openTool('prompt')">Try Free →</button></div>
+      <div class="tool-card"><span class="tool-icon">📋</span><div class="tool-name">Circular Generator</div><div class="tool-desc">Draft professional school circulars, notices, and letters in any language.</div><div class="tool-stats"><div class="tool-stat"><strong>7K</strong> Uses</div><div class="tool-stat"><strong>4.9★</strong> Rated</div></div><button class="tool-btn" onclick="openTool('circular')">Try Free →</button></div>
+      <div class="tool-card"><span class="tool-icon">📊</span><div class="tool-name">Performance Analyzer</div><div class="tool-desc">AI-powered student performance insights with personalized improvement plans.</div><div class="tool-stats"><div class="tool-stat"><strong>4K</strong> Uses</div><div class="tool-stat"><strong>4.8★</strong> Rated</div></div><button class="tool-btn" onclick="openTool('performance')">Try Free →</button></div>
+      <div class="tool-card" style="grid-column:span 2 / span 2;background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(30,58,138,0.08));border:1px dashed rgba(30,58,138,0.25)"><span class="tool-icon">✍️</span><div class="tool-name">AI Blog Article Writer</div><div class="tool-desc">Auto-generate a full educational blog article in Gujarati on any topic — AI writes it for you instantly.</div><div class="tool-stats"><div class="tool-stat"><strong>New</strong></div><div class="tool-stat"><strong>Gujarati ✓</strong></div></div><button class="tool-btn" onclick="openTool('blogwrite')" style="background:linear-gradient(135deg,rgba(220,38,38,0.15),rgba(239,68,68,0.15));border-color:rgba(220,38,38,0.4);color:#FCA5A5">Generate Article →</button></div>
+
+      <!-- ── NEW TOOLS ── -->
+      <div class="tool-card" style="border-color:rgba(16,185,129,0.25);"><span class="tool-icon">🎥</span><div class="tool-name">GSHSEB Video Finder</div><div class="tool-desc">Search official Gujarat Board YouTube videos by topic, grade & subject — GSHSEB Gandhinagar channel.</div><div class="tool-stats"><div class="tool-stat"><strong>New</strong></div><div class="tool-stat"><strong>▶ YouTube</strong></div></div><button class="tool-btn" onclick="openTool('videofind')" style="border-color:rgba(16,185,129,0.4);color:#34D399">Search Videos →</button></div>
+
+      <div class="tool-card" style="border-color:rgba(139,92,246,0.25);"><span class="tool-icon">📖</span><div class="tool-name">GSEB MCQ Quiz Generator</div><div class="tool-desc">Generate board-style MCQ practice quizzes chapter-wise for Std 9–12. Instant answers with explanations.</div><div class="tool-stats"><div class="tool-stat"><strong>New</strong></div><div class="tool-stat"><strong>4.9★</strong></div></div><button class="tool-btn" onclick="openTool('mcqquiz')" style="border-color:rgba(139,92,246,0.4);color:#A78BFA">Generate Quiz →</button></div>
+
+      <div class="tool-card" style="border-color:rgba(245,158,11,0.25);"><span class="tool-icon">📅</span><div class="tool-name">Annual Planner Generator</div><div class="tool-desc">Create a full academic year syllabus planner with month-wise chapter distribution for GSEB curriculum.</div><div class="tool-stats"><div class="tool-stat"><strong>New</strong></div><div class="tool-stat"><strong>GSEB Std 9–12</strong></div></div><button class="tool-btn" onclick="openTool('annualplan')" style="border-color:rgba(245,158,11,0.4);color:#FCD34D">Create Planner →</button></div>
+
+      <div class="tool-card" style="border-color:rgba(236,72,153,0.25);"><span class="tool-icon">🔔</span><div class="tool-name">Parent SMS / WhatsApp Maker</div><div class="tool-desc">Draft professional parent communication messages in Gujarati — results, meetings, fees, events.</div><div class="tool-stats"><div class="tool-stat"><strong>New</strong></div><div class="tool-stat"><strong>Gujarati ✓</strong></div></div><button class="tool-btn" onclick="openTool('parentmsg')" style="border-color:rgba(236,72,153,0.4);color:#F472B6">Draft Message →</button></div>
+
+      <div class="tool-card" style="border-color:rgba(6,182,212,0.25);"><span class="tool-icon">🧠</span><div class="tool-name">Concept Explainer (Bilingual)</div><div class="tool-desc">Explain any GSEB concept in simple Gujarati + English with diagrams description, analogies & examples.</div><div class="tool-stats"><div class="tool-stat"><strong>New</strong></div><div class="tool-stat"><strong>Bilingual</strong></div></div><button class="tool-btn" onclick="openTool('conceptexp')" style="border-color:rgba(6,182,212,0.4);color:#22D3EE">Explain Now →</button></div>
+
+      <div class="tool-card" style="border-color:rgba(251,113,133,0.25);"><span class="tool-icon">📝</span><div class="tool-name">Student Report Card Writer</div><div class="tool-desc">Write personalized, encouraging student report card remarks in Gujarati & English for any grade level.</div><div class="tool-stats"><div class="tool-stat"><strong>New</strong></div><div class="tool-stat"><strong>Gujarati ✓</strong></div></div><button class="tool-btn" onclick="openTool('reportcard')" style="border-color:rgba(251,113,133,0.4);color:#FB7185">Write Remarks →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHER HUB -->
+<section class="teacher-hub" id="teachers">
+  <div class="container">
+    <div class="hub-grid fade-in">
+      <div>
+        <span class="section-tag">For Educators</span>
+        <h2 class="section-title">Teacher <span>Resource Hub</span></h2>
+        <p class="section-sub">Everything a modern educator needs — from AI-generated lesson plans to official letter templates and classroom management tools.</p>
+        <div class="resource-list">
+          <div class="resource-item" onclick="scrollToSection('teachers')" style="cursor:pointer"><div class="ri-icon">📝</div><div><div class="ri-title">Lesson Plan Templates</div><div class="ri-sub">100+ ready-to-use templates for all grades and subjects with AI generation.</div><span class="ri-badge">120+ Templates</span></div></div>
+          <div class="resource-item" onclick="scrollToSection('teachers')" style="cursor:pointer"><div class="ri-icon">📄</div><div><div class="ri-title">Official Letter Formats</div><div class="ri-sub">Principal letters, leave applications, and government correspondence templates.</div><span class="ri-badge">50+ Formats</span></div></div>
+          <div class="resource-item" onclick="scrollToSection('teachers')" style="cursor:pointer"><div class="ri-icon">🎯</div><div><div class="ri-title">Assessment Tools</div><div class="ri-sub">Rubrics, evaluation sheets, and report card generators for all standards.</div><span class="ri-badge">Free Download</span></div></div>
+          <div class="resource-item" onclick="scrollToSection('ai-tools');setTimeout(()=>openTool('prompt'),600)" style="cursor:pointer"><div class="ri-icon">💬</div><div><div class="ri-title">AI Prompt Collections</div><div class="ri-sub">300+ proven ChatGPT/Gemini prompts specifically for Gujarat educators.</div><span class="ri-badge">300+ Prompts</span></div></div>
+        </div>
+      </div>
+      <div class="hub-visual">
+        <div class="hub-visual-grid"></div>
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--white);font-size:.95rem;margin-bottom:16px;position:relative;z-index:1">📊 Teacher Dashboard</div>
+        <div class="hub-card"><div class="hub-card-row"><div class="hub-card-icon">📝</div><div><div class="hub-card-title">Lesson Plans Ready</div><div class="hub-card-sub">Week 48 — All subjects prepared</div></div><span class="hub-badge">Done</span></div></div>
+        <div class="hub-card"><div class="hub-card-row"><div class="hub-card-icon">✅</div><div><div class="hub-card-title">Attendance Marked</div><div class="hub-card-sub">Class 10A — 42/45 Present</div></div><span class="hub-badge">Done</span></div></div>
+        <div class="hub-card"><div class="hub-card-row"><div class="hub-card-icon">📄</div><div><div class="hub-card-title">Circular Drafted</div><div class="hub-card-sub">Annual Sports Day Notice</div></div><span class="hub-badge" style="background:rgba(251,191,36,0.15);color:#FBBF24">Review</span></div></div>
+        <div class="hub-card"><div class="hub-card-row"><div class="hub-card-icon">📊</div><div><div class="hub-card-title">Report Cards Generated</div><div class="hub-card-sub">Q3 — 45 students processed</div></div><span class="hub-badge">Done</span></div></div>
+        <div class="hub-card"><div class="hub-card-row"><div class="hub-card-icon">❓</div><div><div class="hub-card-title">Question Paper Created</div><div class="hub-card-sub">Maths Unit Test — 30 marks</div></div><span class="hub-badge">New</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT HUB -->
+<section class="student-hub" id="students">
+  <div class="container">
+    <div class="center">
+      <span class="section-tag">For Students</span>
+      <h2 class="section-title">Student <span>Learning Hub</span></h2>
+      <p class="section-sub">GSEB, SSC, and HSC resources — notes, MCQs, formula sheets, and chapter-wise solutions to help you score better.</p>
+    </div>
+    <div class="student-grid fade-in">
+      <div class="student-card" onclick="scrollToSection('students')" role="button" tabindex="0" style="cursor:pointer"><div class="sc-top"><span class="sc-icon">📐</span><span class="sc-badge new">New</span></div><div class="sc-title">GSEB Class 10 Maths</div><div class="sc-sub">Complete chapter-wise solutions with step-by-step explanations in Gujarati & English.</div><div class="sc-progress"><div class="sc-progress-bar" style="width:85%"></div></div><div class="sc-progress-label">14/16 chapters available</div></div>
+      <div class="student-card" onclick="scrollToSection('students')" role="button" tabindex="0" style="cursor:pointer"><div class="sc-top"><span class="sc-icon">🔬</span><span class="sc-badge hot">Hot</span></div><div class="sc-title">SSC Science Notes</div><div class="sc-sub">Detailed notes, diagrams, and important questions for all Science chapters.</div><div class="sc-progress"><div class="sc-progress-bar" style="width:100%"></div></div><div class="sc-progress-label">All chapters complete</div></div>
+      <div class="student-card" onclick="scrollToSection('students')" role="button" tabindex="0" style="cursor:pointer"><div class="sc-top"><span class="sc-icon">📖</span><span class="sc-badge free">Free</span></div><div class="sc-title">HSC Commerce Notes</div><div class="sc-sub">Accounts, Economics, and Business Studies notes with practice papers.</div><div class="sc-progress"><div class="sc-progress-bar" style="width:70%"></div></div><div class="sc-progress-label">10/14 chapters available</div></div>
+      <div class="student-card" onclick="scrollToSection('students')" role="button" tabindex="0" style="cursor:pointer"><div class="sc-top"><span class="sc-icon">❓</span><span class="sc-badge hot">Hot</span></div><div class="sc-title">MCQ Practice Bank</div><div class="sc-sub">5000+ MCQs for all subjects with instant answers and explanations.</div><div class="sc-progress"><div class="sc-progress-bar" style="width:60%"></div></div><div class="sc-progress-label">5,000+ questions</div></div>
+      <div class="student-card" onclick="scrollToSection('students')" role="button" tabindex="0" style="cursor:pointer"><div class="sc-top"><span class="sc-icon">🔢</span><span class="sc-badge pdf">PDF</span></div><div class="sc-title">Formula Sheets</div><div class="sc-sub">Quick-reference formula sheets for Maths, Physics, Chemistry downloadable as PDF.</div><div class="sc-progress"><div class="sc-progress-bar" style="width:100%"></div></div><div class="sc-progress-label">All subjects covered</div></div>
+      <div class="student-card" onclick="scrollToSection('youtube')" role="button" tabindex="0" style="cursor:pointer"><div class="sc-top"><span class="sc-icon">📹</span><span class="sc-badge new">New</span></div><div class="sc-title">Video Lectures</div><div class="sc-sub">Concept videos in Gujarati for SSC and HSC students with animated explanations.</div><div class="sc-progress"><div class="sc-progress-bar" style="width:45%"></div></div><div class="sc-progress-label">50+ videos published</div></div>
+    </div>
+    <div class="center"><a href="#students" class="btn btn-primary" style="margin:0 auto">Explore All Resources →</a></div>
+  </div>
+</section>
+
+<!-- ERP -->
+<section class="erp-section" id="erp">
+  <div class="container">
+    <div class="erp-grid fade-in">
+      <div>
+        <span class="section-tag">School ERP</span>
+        <h2 class="section-title" style="color:var(--white)">Complete Digital School <span style="-webkit-text-fill-color:unset;color:#FCA5A5">Management</span></h2>
+        <p class="section-sub">Transform your school with our AI-powered ERP system. From admissions to results — manage everything digitally.</p>
+        <div class="erp-features">
+          <div class="erp-feat"><div class="ef-icon">🎓</div><div><div class="ef-title">Admission Management</div><div class="ef-sub">Online forms, document verification, fee collection, and allotment.</div></div></div>
+          <div class="erp-feat"><div class="ef-icon">👥</div><div><div class="ef-title">Student Information System</div><div class="ef-sub">Complete student profiles, history, and performance tracking.</div></div></div>
+          <div class="erp-feat"><div class="ef-icon">✅</div><div><div class="ef-title">Smart Attendance</div><div class="ef-sub">Biometric, RFID, and mobile-based attendance with auto parent SMS.</div></div></div>
+          <div class="erp-feat"><div class="ef-icon">📊</div><div><div class="ef-title">Report Card Generator</div><div class="ef-sub">Auto-generate report cards with grades, remarks, and signatures.</div></div></div>
+          <div class="erp-feat"><div class="ef-icon">📋</div><div><div class="ef-title">General Register (GR)</div><div class="ef-sub">Digital GR with auto-numbering, search, and government format export.</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="erp-dashboard">
+          <div class="erp-dash-header"><div class="erp-dash-title">🏫 School Admin Dashboard</div><div class="erp-dash-dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div></div>
+          <div class="erp-stats-row">
+            <div class="erp-stat-card"><div class="esc-val">1,248</div><div class="esc-label">Total Students</div><div class="esc-trend">+12 this week</div></div>
+            <div class="erp-stat-card"><div class="esc-val">64</div><div class="esc-label">Teachers</div><div class="esc-trend">+2 new</div></div>
+            <div class="erp-stat-card"><div class="esc-val">94%</div><div class="esc-label">Attendance</div><div class="esc-trend">↑ 2.4%</div></div>
+            <div class="erp-stat-card"><div class="esc-val">₹2.4L</div><div class="esc-label">Fee Collected</div><div class="esc-trend">This month</div></div>
+          </div>
+          <div class="erp-chart-area">
+            <div class="eca-label">Monthly Attendance Rate (%)</div>
+            <div class="eca-bars">
+              <div class="eca-bar" style="height:75%"></div>
+              <div class="eca-bar" style="height:82%"></div>
+              <div class="eca-bar" style="height:68%"></div>
+              <div class="eca-bar" style="height:90%"></div>
+              <div class="eca-bar" style="height:85%"></div>
+              <div class="eca-bar" style="height:94%"></div>
+              <div class="eca-bar" style="height:88%"></div>
+              <div class="eca-bar" style="height:96%"></div>
+              <div class="eca-bar" style="height:92%"></div>
+              <div class="eca-bar" style="height:89%"></div>
+              <div class="eca-bar" style="height:94%"></div>
+              <div class="eca-bar" style="height:91%"></div>
+            </div>
+          </div>
+          <table class="erp-table">
+            <thead><tr><th>Student</th><th>Class</th><th>Fee Status</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Riya Patel</td><td>10-A</td><td>Paid</td><td><span class="status-badge sb-active">Active</span></td></tr>
+              <tr><td>Arjun Shah</td><td>9-B</td><td>Pending</td><td><span class="status-badge sb-pend">Pending</span></td></tr>
+              <tr><td>Pooja Mehta</td><td>11-Sci</td><td>Paid</td><td><span class="status-badge sb-active">Active</span></td></tr>
+              <tr><td>Dev Joshi</td><td>8-C</td><td>Paid</td><td><span class="status-badge sb-active">Active</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GANIT ERP -->
+<section id="erp-ganit" style="background:var(--white);padding:80px 0">
+  <div class="container">
+    <div class="center" style="margin-bottom:48px">
+      <span class="section-tag" style="background:rgba(184,68,44,0.1);border-color:rgba(184,68,44,0.25);color:#b8442c">📐 Interactive Math Tool</span>
+      <h2 class="section-title">ગણિત ERP — <span>Real Numbers (વાસ્તવિક સંખ્યાઓ)</span></h2>
+      <p class="section-sub">ધોરણ ૧૦ · Gujarat Board · ત્રણ ઇન્ટરેક્ટિવ modules — Factor Tree, HCF/LCM & Irrational Proof. Step-by-step solutions in Gujarati, instantly.</p>
+    </div>
+
+    <!-- Feature chips row -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:36px">
+      <span style="padding:6px 16px;background:rgba(184,68,44,0.1);border:1.5px solid rgba(184,68,44,0.25);border-radius:20px;font-size:.8rem;font-weight:700;color:#b8442c">🌳 Factor Tree</span>
+      <span style="padding:6px 16px;background:rgba(44,94,90,0.1);border:1.5px solid rgba(44,94,90,0.25);border-radius:20px;font-size:.8rem;font-weight:700;color:#2c5e5a">📊 HCF &amp; LCM</span>
+      <span style="padding:6px 16px;background:rgba(212,168,67,0.15);border:1.5px solid rgba(212,168,67,0.3);border-radius:20px;font-size:.8rem;font-weight:700;color:#92650a">√ Irrational Proof</span>
+      <span style="padding:6px 16px;background:rgba(30,58,138,0.08);border:1.5px solid rgba(30,58,138,0.2);border-radius:20px;font-size:.8rem;font-weight:700;color:var(--blue)">🇬🇺 ગુજરાતી માધ્યમ</span>
+      <span style="padding:6px 16px;background:rgba(30,58,138,0.08);border:1.5px solid rgba(30,58,138,0.2);border-radius:20px;font-size:.8rem;font-weight:700;color:var(--blue)">⚡ Step-by-Step</span>
+    </div>
+
+    <!-- THE ERP TOOL -->
+    <div class="erp-ganit-wrap fade-in">
+
+      <!-- Header -->
+      <div class="erp-ganit-header">
+        <div class="erp-ganit-crest">ગ</div>
+        <div>
+          <div class="erp-ganit-title">ગણિત શિક્ષણ સંસાધન મંચ</div>
+          <div class="erp-ganit-sub">પ્રકરણ ૧ : વાસ્તવિક સંખ્યાઓ — ધોરણ ૧૦ (ગુજરાતી માધ્યમ)</div>
+        </div>
+        <div class="erp-ganit-chip">ERP · v 1.0</div>
+      </div>
+
+      <!-- Tab Nav -->
+      <nav class="erp-ganit-nav" role="tablist">
+        <button class="erp-gtab active" data-gtarget="gm1"><span class="gnum">૧</span> અવયવ વૃક્ષ</button>
+        <button class="erp-gtab" data-gtarget="gm2"><span class="gnum">૨</span> ગુ.સા.અ. અને લ.સા.અ.</button>
+        <button class="erp-gtab" data-gtarget="gm3"><span class="gnum">૩</span> અસંમેયતાની સાબિતી</button>
+      </nav>
+
+      <!-- MODULE 1: FACTOR TREE -->
+      <div id="gm1" class="erp-gmodule active">
+        <div class="erpg-head">
+          <div class="erpg-num">૧</div>
+          <div>
+            <div class="erpg-title">અવયવ વૃક્ષની રીતે અવિભાજ્ય અવયવીકરણ</div>
+            <div class="erpg-desc">આપેલી સંખ્યાને અંકગણિતના મૂળભૂત પ્રમેય મુજબ અવિભાજ્ય સંખ્યાઓના ગુણાકાર તરીકે દર્શાવો. સંખ્યા દાખલ કરી "વૃક્ષ બનાવો" દબાવો.</div>
+          </div>
+        </div>
+        <div class="erpg-input-card">
+          <div class="erpg-input-row">
+            <div class="erpg-field">
+              <label>કોઈ પણ પ્રાકૃતિક સંખ્યા (n ≥ ૨)</label>
+              <input type="number" id="g-ft-input" min="2" placeholder="ઉદા. 32760">
+            </div>
+            <button class="erpg-btn" id="g-ft-btn">🌳 વૃક્ષ બનાવો</button>
+            <button class="erpg-btn sec" id="g-ft-clear">સાફ</button>
+          </div>
+          <div class="erpg-presets">
+            <span style="font-size:11px;color:#6b6557;align-self:center;margin-right:4px">નમૂના:</span>
+            <button class="erpg-pill" data-gn="32760">32760</button>
+            <button class="erpg-pill" data-gn="140">140</button>
+            <button class="erpg-pill" data-gn="3825">3825</button>
+            <button class="erpg-pill" data-gn="5005">5005</button>
+            <button class="erpg-pill" data-gn="7429">7429</button>
+            <button class="erpg-pill" data-gn="156">156</button>
+          </div>
+          <div class="erpg-helper">સૂચન: સંખ્યા ઘણી મોટી હોય તો વૃક્ષ વિશાળ થઈ શકે; આડું સ્ક્રોલ કરો.</div>
+          <div class="erpg-error" id="g-ft-error"></div>
+        </div>
+        <div class="erpg-result" id="g-ft-result"></div>
+      </div>
+
+      <!-- MODULE 2: HCF & LCM -->
+      <div id="gm2" class="erp-gmodule">
+        <div class="erpg-head">
+          <div class="erpg-num">૨</div>
+          <div>
+            <div class="erpg-title">અવિભાજ્ય અવયવીકરણ રીતે ગુ.સા.અ. અને લ.સા.અ.</div>
+            <div class="erpg-desc">બે અથવા ત્રણ સંખ્યાઓ આપો — HCF (ગુ.સા.અ.) અને LCM (લ.સા.અ.) સ્ટેપ-બાય-સ્ટેપ, prime factorization method વડે.</div>
+          </div>
+        </div>
+        <div class="erpg-input-card">
+          <div class="erpg-input-row">
+            <div class="erpg-field"><label>સંખ્યા ૧</label><input type="number" id="g-ln-a" min="1" placeholder="ઉદા. 6"></div>
+            <div class="erpg-field"><label>સંખ્યા ૨</label><input type="number" id="g-ln-b" min="1" placeholder="ઉદા. 72"></div>
+            <div class="erpg-field"><label>સંખ્યા ૩ (વૈકલ્પિક)</label><input type="number" id="g-ln-c" min="1" placeholder="ઉદા. 120"></div>
+            <button class="erpg-btn" id="g-ln-btn">📊 હલ કરો</button>
+          </div>
+          <div class="erpg-presets">
+            <span style="font-size:11px;color:#6b6557;align-self:center;margin-right:4px">નમૂના:</span>
+            <button class="erpg-pill" data-gset="6,20">6, 20</button>
+            <button class="erpg-pill" data-gset="6,72,120">6, 72, 120</button>
+            <button class="erpg-pill" data-gset="96,404">96, 404</button>
+            <button class="erpg-pill" data-gset="12,15,21">12, 15, 21</button>
+            <button class="erpg-pill" data-gset="510,92">510, 92</button>
+          </div>
+          <div class="erpg-error" id="g-ln-error"></div>
+        </div>
+        <div class="erpg-result" id="g-ln-result"></div>
+      </div>
+
+      <!-- MODULE 3: IRRATIONAL PROOF -->
+      <div id="gm3" class="erp-gmodule">
+        <div class="erpg-head">
+          <div class="erpg-num">૩</div>
+          <div>
+            <div class="erpg-title">√n એ અસંમેય સંખ્યા છે — સાબિતી</div>
+            <div class="erpg-desc">Contradiction method (અનિષ્ટાપત્તિ) વડે √n, k√n, c+√n — ગમે તે સ્વરૂપ માટે સ્ટેપ-બાય-સ્ટેપ proof.</div>
+          </div>
+        </div>
+        <div class="erpg-input-card">
+          <div class="erpg-input-row">
+            <div class="erpg-field"><label>√ ની અંદર (prime)</label><input type="number" id="g-ir-n" min="2" placeholder="ઉદા. 2" value="2"></div>
+            <div class="erpg-field"><label>ગુણાંક (વૈકલ્પિક)</label><input type="number" id="g-ir-coef" placeholder="ઉ. 3 = 3√n"></div>
+            <div class="erpg-field"><label>સ્થિર (વૈકલ્પિક)</label><input type="number" id="g-ir-const" placeholder="ઉ. 5 = 5±√n"></div>
+            <button class="erpg-btn" id="g-ir-btn">√ સાબિતી</button>
+          </div>
+          <div class="erpg-presets">
+            <span style="font-size:11px;color:#6b6557;align-self:center;margin-right:4px">નમૂના:</span>
+            <button class="erpg-pill" data-gir="2,,">√2</button>
+            <button class="erpg-pill" data-gir="3,,">√3</button>
+            <button class="erpg-pill" data-gir="5,,">√5</button>
+            <button class="erpg-pill" data-gir="3,,5">5−√3</button>
+            <button class="erpg-pill" data-gir="2,3,">3√2</button>
+            <button class="erpg-pill" data-gir="5,2,3">3+2√5</button>
+          </div>
+          <div class="erpg-helper">નોંધ: √ ની અંદરની સંખ્યા અવિભાજ્ય (prime) હોવી જરૂરી છે.</div>
+          <div class="erpg-error" id="g-ir-error"></div>
+        </div>
+        <div class="erpg-result" id="g-ir-result"></div>
+      </div>
+
+    </div><!-- end erp-ganit-wrap -->
+
+    <!-- CTA row -->
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap">
+      <a href="#ai-tools" onclick="setTimeout(()=>openTool('mcqquiz'),400)" class="btn btn-primary">📝 MCQ Quiz Generator</a>
+      <a href="#ai-tools" onclick="setTimeout(()=>openTool('conceptexp'),400)" class="btn btn-glass" style="background:rgba(184,68,44,0.1);border:1.5px solid rgba(184,68,44,0.3);color:#b8442c">🧠 Concept Explainer</a>
+      <a href="#ai-tools" onclick="setTimeout(()=>openTool('videofind'),400)" class="btn btn-glass" style="background:rgba(44,94,90,0.1);border:1.5px solid rgba(44,94,90,0.3);color:#2c5e5a">🎥 GSHSEB Videos</a>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE -->
+<section class="youtube-section" id="youtube">
+  <div class="container">
+    <div class="center">
+      <span class="section-tag">Video Tutorials</span>
+      <h2 class="section-title">Learn Through <span>Video</span></h2>
+      <p class="section-sub">Step-by-step video guides on AI tools, school ERP, GSEB content, and educational technology — in Gujarati & Hindi.</p>
+    </div>
+    <div class="yt-grid fade-in">
+      <div class="yt-card" onclick="playYouTube('ChatGPT For Teachers – Complete Beginner Guide')" style="cursor:pointer"><div class="yt-thumb blue"><span>🤖</span><div class="yt-play"><div class="yt-play-btn">▶</div></div><div class="yt-duration">12:34</div></div><div class="yt-body"><div class="yt-title">ChatGPT For Teachers – Complete Beginner Guide in Gujarati</div><div class="yt-meta"><span>👁 24K views</span><span>3 weeks ago</span></div></div></div>
+      <div class="yt-card" onclick="playYouTube('School ERP Setup Tutorial – Full Walkthrough 2024')" style="cursor:pointer"><div class="yt-thumb dark"><span>📊</span><div class="yt-play"><div class="yt-play-btn">▶</div></div><div class="yt-duration">18:22</div></div><div class="yt-body"><div class="yt-title">School ERP Setup Tutorial – Full Walkthrough 2024</div><div class="yt-meta"><span>👁 18K views</span><span>1 month ago</span></div></div></div>
+      <div class="yt-card" onclick="playYouTube('GSEB Class 10 Maths Board Paper Solution 2024')" style="cursor:pointer"><div class="yt-thumb red2"><span>📐</span><div class="yt-play"><div class="yt-play-btn">▶</div></div><div class="yt-duration">22:08</div></div><div class="yt-body"><div class="yt-title">GSEB Class 10 Maths Board Paper Solution 2024 – Full Explained</div><div class="yt-meta"><span>👁 52K views</span><span>2 months ago</span></div></div></div>
+      <div class="yt-card" onclick="playYouTube('How to Generate Question Papers With AI in 5 Minutes')" style="cursor:pointer"><div class="yt-thumb blue"><span>⚡</span><div class="yt-play"><div class="yt-play-btn">▶</div></div><div class="yt-duration">9:45</div></div><div class="yt-body"><div class="yt-title">How to Generate Question Papers With AI in 5 Minutes</div><div class="yt-meta"><span>👁 11K views</span><span>2 weeks ago</span></div></div></div>
+      <div class="yt-card" onclick="playYouTube('Automate Attendance with Google Sheets')" style="cursor:pointer"><div class="yt-thumb dark"><span>📋</span><div class="yt-play"><div class="yt-play-btn">▶</div></div><div class="yt-duration">14:58</div></div><div class="yt-body"><div class="yt-title">Automate Attendance with Google Sheets – No Coding Required</div><div class="yt-meta"><span>👁 9K views</span><span>1 month ago</span></div></div></div>
+      <div class="yt-card" onclick="playYouTube('HSC Board Exam 2025: Complete Strategy & Study Plan')" style="cursor:pointer"><div class="yt-thumb red2"><span>🎓</span><div class="yt-play"><div class="yt-play-btn">▶</div></div><div class="yt-duration">28:15</div></div><div class="yt-body"><div class="yt-title">HSC Board Exam 2025: Complete Strategy & Study Plan</div><div class="yt-meta"><span>👁 34K views</span><span>3 weeks ago</span></div></div></div>
+    </div>
+    <div class="yt-subscribe">
+      <div class="yt-channel"><div class="yt-ch-icon">▶</div><div><div class="yt-ch-name">Aarsi AI Education</div><div class="yt-ch-sub">12.4K Subscribers</div></div></div>
+      <a href="https://www.youtube.com/@AarsiAIEducation" target="_blank" rel="noopener" class="btn btn-red">Subscribe on YouTube →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="center">
+      <span class="section-tag">Testimonials</span>
+      <h2 class="section-title">Trusted by <span>Educators</span></h2>
+      <p class="section-sub">What teachers, principals, and students across Gujarat are saying about Aarsi AI Education.</p>
+    </div>
+    <div class="testi-grid fade-in">
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-text">The AI Lesson Planner saves me at least 3 hours every week. I can't imagine going back to planning lessons manually. Aarsi AI Education is a game-changer for teachers.</div><div class="testi-author"><div class="ta-av">PP</div><div><div class="ta-name">Priya Patel</div><div class="ta-role">Science Teacher, Ahmedabad</div></div></div><div class="testi-stars">★★★★★</div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-text">Our school's ERP system was set up using guidance from Aarsi AI. The digital attendance and report card generator alone saved 40+ hours per term for our admin staff.</div><div class="testi-author"><div class="ta-av">RD</div><div><div class="ta-name">Rajesh Desai</div><div class="ta-role">Principal, Surat Municipal School</div></div></div><div class="testi-stars">★★★★★</div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-text">The GSEB Maths solutions here are the clearest I've found. With Gujarati explanations and step-by-step workings, I improved my marks from 65 to 89 in one semester!</div><div class="testi-author"><div class="ta-av">KS</div><div><div class="ta-name">Kavya Shah</div><div class="ta-role">Class 10 Student, Vadodara</div></div></div><div class="testi-stars">★★★★★</div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-text">The AI prompt library is incredible. I use it daily for drafting school communications, creating worksheets, and even writing parent meeting summaries in minutes.</div><div class="testi-author"><div class="ta-av">AM</div><div><div class="ta-name">Ankit Modi</div><div class="ta-role">Maths Teacher, Rajkot</div></div></div><div class="testi-stars">★★★★★</div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-text">As a school administrator, the timetable generator reduced our scheduling effort from 2 days to 20 minutes. Highly recommend to every school in Gujarat.</div><div class="testi-author"><div class="ta-av">NJ</div><div><div class="ta-name">Nita Joshi</div><div class="ta-role">Vice Principal, Gandhinagar</div></div></div><div class="testi-stars">★★★★★</div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-text">The HSC preparation resources are comprehensive and well-organized. The YouTube tutorials in Gujarati helped me understand difficult chapters clearly before exams.</div><div class="testi-author"><div class="ta-av">HT</div><div><div class="ta-name">Het Trivedi</div><div class="ta-role">HSC Science Student, Mehsana</div></div></div><div class="testi-stars">★★★★★</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="nl-bg"></div>
+  <div class="container">
+    <div class="nl-content">
+      <span class="section-tag" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:var(--white)">Stay Updated</span>
+      <h2 class="section-title" style="margin-top:8px">Get Free AI Resources for <span>Educators</span></h2>
+      <p>Join 8,000+ Gujarat teachers and students who receive weekly AI tools, GSEB resources, and EdTech updates straight to their inbox.</p>
+      <form class="nl-form" onsubmit="handleNewsletter(event)">
+        <input class="nl-input" id="nlEmail" type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-primary" id="nlBtn">Subscribe Free</button>
+      </form>
+      <div id="nlSuccess" style="display:none;margin-top:14px;background:rgba(74,222,128,0.15);border:1px solid rgba(74,222,128,0.3);border-radius:10px;padding:12px 18px;color:#4ADE80;font-size:.88rem;text-align:center">
+        ✅ Subscribed! Welcome to Aarsi AI Education newsletter.
+      </div>
+      <div class="nl-features">
+        <span class="nl-feat">Weekly AI Tips</span>
+        <span class="nl-feat">Free Resources</span>
+        <span class="nl-feat">No Spam, Ever</span>
+        <span class="nl-feat">Unsubscribe Anytime</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo"><div class="logo-icon">🎓</div>Aarsi <span>AI</span> Education</a>
+        <p>Empowering Gujarat's teachers, schools, and students with AI-powered educational tools, resources, and digital transformation solutions.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-btn" title="Facebook">📘</a>
+          <a href="https://www.youtube.com/@AarsiAIEducation" target="_blank" rel="noopener" class="social-btn" title="YouTube">▶</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-btn" title="Instagram">📸</a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-btn" title="Twitter / X">🐦</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">💼</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>AI Tools</h4><ul class="footer-links"><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('lesson'),400)">Lesson Planner</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('homework'),400)">Homework Generator</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('qpaper'),400)">Question Paper AI</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('mcqquiz'),400)">MCQ Quiz Generator</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('videofind'),400)">GSHSEB Video Finder</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('conceptexp'),400)">Concept Explainer</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('annualplan'),400)">Annual Planner</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('parentmsg'),400)">Parent Message Maker</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('reportcard'),400)">Report Card Writer</a></li><li><a href="#ai-tools" onclick="setTimeout(()=>openTool('prompt'),400)">Prompt Library</a></li></ul></div>
+      <div class="footer-col"><h4>Students</h4><ul class="footer-links"><li><a href="#students">GSEB Solutions</a></li><li><a href="#students">SSC Notes</a></li><li><a href="#students">HSC Resources</a></li><li><a href="#students">MCQ Practice</a></li><li><a href="#students">Formula Sheets</a></li><li><a href="#youtube">Video Lectures</a></li></ul></div>
+      <div class="footer-col"><h4>Schools</h4><ul class="footer-links"><li><a href="#erp">School ERP</a></li><li><a href="#erp">Admission System</a></li><li><a href="#erp">Attendance Software</a></li><li><a href="#erp">Report Cards</a></li><li><a href="#erp">GR System</a></li><li><a href="mailto:ravisir11@gmail.com">Contact Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Aarsi AI Education. All rights reserved. | Made with ❤️ for Gujarat Educators</p>
+      <div class="footer-bottom-links"><a href="#home">Privacy Policy</a><a href="#home">Terms of Use</a><a href="#newsletter">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ API KEY SETUP MODAL ══ -->
+<div id="apiModal" style="
+  position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;
+  background:rgba(15,23,42,0.85);backdrop-filter:blur(8px);padding:20px;
+">
+  <div style="
+    background:var(--white);border-radius:20px;padding:36px;max-width:480px;width:100%;
+    box-shadow:0 30px 80px rgba(0,0,0,0.4);position:relative;
+  ">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:3rem;margin-bottom:12px">🤖</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:1.4rem;color:var(--text-dark);margin-bottom:8px">Activate Gemini AI</h2>
+      <p style="color:var(--text-muted);font-size:.88rem;line-height:1.6">Enter your <strong>Google Gemini API key</strong> to power the AI Chatbot and all AI Tools. Uses <strong>Gemini 2.0 Flash</strong> — Google's latest fast model.</p>
+    </div>
+    <div style="background:var(--bg2);border-radius:12px;padding:16px;margin-bottom:20px;font-size:.8rem;color:var(--text-muted);line-height:1.65">
+      <strong style="color:var(--blue)">🔑 How to get a free API key:</strong><br>
+      1. <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:var(--blue-light);font-weight:600">aistudio.google.com/app/apikey</a> — ખોલો<br>
+      2. Google account વડે sign in કરો<br>
+      3. <em>"Create API Key"</em> → Click → Copy<br>
+      4. નીચે paste કરો → Activate દબાવો<br>
+      <span style="color:#059669;font-weight:700">✅ Free tier: 15 req/min — completely free! Uses Gemini 2.0 Flash.</span>
+    </div>
+    <div style="position:relative;margin-bottom:14px">
+      <input id="apiKeyInput" type="password"
+        placeholder="AIzaSy..."
+        style="
+          width:100%;padding:13px 44px 13px 16px;border:2px solid #E2E8F0;border-radius:10px;
+          font-size:.9rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;
+        "
+        oninput="this.style.borderColor='#3B82F6'"
+      >
+      <button onclick="toggleKeyVisibility()" style="
+        position:absolute;right:12px;top:50%;transform:translateY(-50%);
+        background:none;border:none;cursor:pointer;font-size:1.1rem;
+      " title="Show/hide key">👁</button>
+    </div>
+    <button onclick="activateGemini()" style="
+      width:100%;padding:13px;background:linear-gradient(135deg,#1E3A8A,#2563EB);
+      color:white;border:none;border-radius:10px;font-family:'Poppins',sans-serif;
+      font-weight:700;font-size:.95rem;cursor:pointer;transition:opacity .2s;
+    " onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
+      ⚡ Activate Gemini AI
+    </button>
+    <p style="text-align:center;font-size:.72rem;color:var(--text-muted);margin-top:12px">
+      🔒 Your key is stored locally in your browser only — never sent to our servers.
+    </p>
+    <button onclick="skipApiSetup()" style="
+      display:block;margin:10px auto 0;background:none;border:none;
+      color:var(--text-muted);font-size:.8rem;cursor:pointer;text-decoration:underline;
+    ">Skip for now (demo mode)</button>
+  </div>
+</div>
+
+<!-- ══ AI TOOL MODAL ══ -->
+<div id="toolModal" style="
+  position:fixed;inset:0;z-index:8000;display:none;align-items:center;justify-content:center;
+  background:rgba(15,23,42,0.8);backdrop-filter:blur(6px);padding:16px;
+">
+  <div style="
+    background:var(--white);border-radius:20px;width:100%;max-width:640px;
+    box-shadow:0 30px 80px rgba(0,0,0,0.35);overflow:hidden;max-height:90vh;display:flex;flex-direction:column;
+  ">
+    <div id="toolModalHeader" style="
+      background:linear-gradient(135deg,var(--navy),var(--blue));
+      padding:20px 24px;display:flex;align-items:center;justify-content:space-between;
+    ">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span id="toolModalIcon" style="font-size:1.8rem"></span>
+        <div>
+          <div id="toolModalTitle" style="font-family:'Poppins',sans-serif;font-weight:700;color:white;font-size:1rem"></div>
+          <div style="font-size:.72rem;color:rgba(255,255,255,0.6)">✨ Gemini 2.0 Flash — GSEB Gujarati Expert</div>
+        </div>
+      </div>
+      <button onclick="closeToolModal()" style="background:rgba(255,255,255,0.1);border:none;color:white;width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1rem">✕</button>
+    </div>
+    <div style="padding:20px 24px;flex:1;overflow-y:auto">
+      <div id="toolFormArea"></div>
+      <div id="toolResultArea" style="display:none">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;color:var(--text-dark)">✨ AI Generated Result</span>
+          <button onclick="copyToolResult()" style="
+            background:var(--bg2);border:1px solid #E2E8F0;border-radius:8px;
+            padding:5px 12px;font-size:.75rem;cursor:pointer;color:var(--blue);font-weight:600;
+          ">📋 Copy</button>
+        </div>
+        <div id="toolResultText" style="
+          background:var(--bg);border:1px solid #E2E8F0;border-radius:12px;
+          padding:16px;font-size:.85rem;line-height:1.75;color:var(--text);
+          white-space:pre-wrap;max-height:340px;overflow-y:auto;
+        "></div>
+        <button onclick="resetToolModal()" style="
+          margin-top:14px;width:100%;padding:10px;background:var(--bg2);
+          border:1.5px solid #E2E8F0;border-radius:10px;cursor:pointer;
+          font-family:'DM Sans',sans-serif;font-weight:600;font-size:.85rem;color:var(--blue);
+        ">← Generate Another</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CHATBOT ══ -->
+<div class="chatbot-btn" onclick="toggleChat()" title="AI Assistant">🤖</div>
+<div class="chatbot-popup" id="chatbot">
+  <div class="cp-header">
+    <div class="cp-avatar">🤖</div>
+    <div>
+      <div class="cp-title">Aarsi AI Assistant</div>
+      <div class="cp-sub" id="chatStatus">● Powered by Gemini</div>
+    </div>
+    <button class="cp-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="cp-body" id="chatBody">
+    <div class="cp-msg">👋 <strong>નમસ્તે! Namaste!</strong> હું <strong>આરસી AI</strong> — Gemini-powered educational assistant!<br><br>મને પૂછો / Ask me:<br>• 📐 GSEB ગણિત, SSC/HSC solutions<br>• 📝 Lesson plans &amp; question papers<br>• 🏫 School ERP &amp; circulars<br>• 🤖 AI prompts for teachers<br>• 💬 Gujarati or English — both work!</div>
+  </div>
+  <div style="padding:6px 12px;background:var(--bg2);font-size:.7rem;color:var(--text-muted);text-align:center;border-top:1px solid #E2E8F0" id="chatApiStatus">
+    ✅ Gemini AI Active
+  </div>
+  <div id="chatSuggestions" style="padding:8px 10px;display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid #E2E8F0;background:var(--bg)">
+    <button onclick="quickChat('ધોરણ ૧૦ ગણિત બહુપદી સમજાવો')" style="font-size:.67rem;padding:3px 9px;border-radius:20px;border:1px solid #BFDBFE;background:#EFF6FF;color:var(--blue);cursor:pointer;font-family:inherit">📐 Polynomial</button>
+    <button onclick="quickChat('GSEB SSC exam tips in Gujarati')" style="font-size:.67rem;padding:3px 9px;border-radius:20px;border:1px solid #BFDBFE;background:#EFF6FF;color:var(--blue);cursor:pointer;font-family:inherit">🎓 Exam Tips</button>
+    <button onclick="quickChat('AI tools for teachers list')" style="font-size:.67rem;padding:3px 9px;border-radius:20px;border:1px solid #BFDBFE;background:#EFF6FF;color:var(--blue);cursor:pointer;font-family:inherit">🤖 AI Tools</button>
+    <button onclick="quickChat('School ERP kya hai samjhao')" style="font-size:.67rem;padding:3px 9px;border-radius:20px;border:1px solid #BFDBFE;background:#EFF6FF;color:var(--blue);cursor:pointer;font-family:inherit">🏫 School ERP</button>
+  </div>
+  <div class="cp-input-row">
+    <input class="cp-input" id="chatInput" type="text" placeholder="ગુજરાતી / English — anything!" onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="cp-send" id="chatSendBtn" onclick="sendChat()">→</button>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════
+   UTILITY HELPERS — Bug Fixes & Feature Fixes
+   ═══════════════════════════════════════════ */
+
+// scrollToSection — smooth scroll used by cards/footer/categories
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// filterBlog — real blog post filtering by category
+function filterBlog(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.blog-grid .blog-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+      card.style.opacity = '0';
+      setTimeout(() => { card.style.opacity = '1'; card.style.transition = 'opacity .4s ease'; }, 10);
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// handleNewsletter — newsletter form submit with feedback
+function handleNewsletter(e) {
+  e.preventDefault();
+  const emailEl = document.getElementById('nlEmail');
+  const btn = document.getElementById('nlBtn');
+  const successEl = document.getElementById('nlSuccess');
+  if (!emailEl || !emailEl.value.trim()) return;
+  btn.textContent = 'Subscribing...';
+  btn.disabled = true;
+  setTimeout(() => {
+    emailEl.value = '';
+    btn.textContent = 'Subscribed ✓';
+    btn.style.background = 'linear-gradient(135deg,#059669,#10B981)';
+    if (successEl) { successEl.style.display = 'block'; }
+    showToast('✅ Subscribed to Aarsi AI Education newsletter!');
+    setTimeout(() => {
+      btn.textContent = 'Subscribe Free';
+      btn.disabled = false;
+      btn.style.background = '';
+      if (successEl) successEl.style.display = 'none';
+    }, 4500);
+  }, 900);
+}
+
+// playYouTube — show toast + redirect
+function playYouTube(title) {
+  showToast('▶ Opening: ' + title);
+  setTimeout(() => {
+    window.open('https://www.youtube.com/@AarsiAIEducation', '_blank', 'noopener');
+  }, 800);
+}
+
+/* ════════════════════════════════════════════
+   AARSI AI EDUCATION — GEMINI API INTEGRATION
+   ════════════════════════════════════════════ */
+
+// ── API KEY MANAGEMENT ──
+let GEMINI_KEY = localStorage.getItem('aarsi_gemini_key') || '';
+
+// ── MODEL FALLBACK CHAIN (most current → fallback) ──
+// gemini-1.5-flash was deprecated in v1beta — use gemini-2.0-flash
+const GEMINI_MODELS = [
+  'gemini-2.0-flash',
+  'gemini-2.0-flash-lite',
+  'gemini-1.5-flash-latest',
+  'gemini-1.5-flash-002',
+  'gemini-pro',
+];
+const GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models/';
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (GEMINI_KEY) {
+    hideApiModal();
+    updateApiStatus(true);
+  }
+});
+
+function activateGemini() {
+  const key = document.getElementById('apiKeyInput').value.trim();
+  if (!key || !key.startsWith('AIza')) {
+    shakeInput();
+    alert('⚠️ Please enter a valid Gemini API key (starts with "AIza...")');
+    return;
+  }
+  GEMINI_KEY = key;
+  localStorage.setItem('aarsi_gemini_key', key);
+  hideApiModal();
+  updateApiStatus(true);
+  showToast('✅ Gemini AI activated! All tools are now live.');
+}
+
+function hideApiModal() {
+  document.getElementById('apiModal').style.display = 'none';
+}
+
+function skipApiSetup() {
+  hideApiModal();
+  updateApiStatus(false);
+}
+
+function updateApiStatus(active) {
+  const s = document.getElementById('chatStatus');
+  const bar = document.getElementById('chatApiStatus');
+  if (active) {
+    if (s) s.textContent = '● Gemini AI Active';
+    if (bar) bar.innerHTML = '✅ Gemini AI Active — <a href="javascript:void(0)" onclick="resetApiKey()" style="color:var(--red);text-decoration:underline">Change Key</a>';
+  } else {
+    if (s) s.textContent = '● Demo Mode (no AI key)';
+    if (bar) bar.innerHTML = '⚠️ Demo mode — <a href="javascript:void(0)" onclick="showApiModal()" style="color:var(--blue-light);text-decoration:underline">Add API Key</a>';
+  }
+}
+
+function resetApiKey() {
+  localStorage.removeItem('aarsi_gemini_key');
+  GEMINI_KEY = '';
+  showApiModal();
+}
+
+function showApiModal() {
+  document.getElementById('apiModal').style.display = 'flex';
+}
+
+function toggleKeyVisibility() {
+  const inp = document.getElementById('apiKeyInput');
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+}
+
+function shakeInput() {
+  const inp = document.getElementById('apiKeyInput');
+  inp.style.borderColor = '#DC2626';
+  inp.style.animation = 'shake .4s ease';
+  setTimeout(() => inp.style.animation = '', 500);
+}
+
+// ── GEMINI API CALL — with automatic model fallback ──
+async function callGemini(prompt, systemContext = '') {
+  if (!GEMINI_KEY) {
+    return '⚠️ No Gemini API key found. Click the "Add API Key" link in the chat header to activate AI features.';
+  }
+  const fullPrompt = systemContext
+    ? `${systemContext}\n\nUser request: ${prompt}`
+    : prompt;
+
+  const body = JSON.stringify({
+    contents: [{ parts: [{ text: fullPrompt }] }],
+    generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
+  });
+
+  // Try each model in the fallback chain until one works
+  let lastError = '';
+  for (const model of GEMINI_MODELS) {
+    const url = `${GEMINI_BASE}${model}:generateContent?key=${GEMINI_KEY}`;
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        const msg = err?.error?.message || 'Unknown error';
+        // Hard errors — don't retry other models
+        if (msg.includes('API_KEY_INVALID') || msg.includes('API key not valid')) {
+          return '❌ Invalid API key. Please check your Gemini API key at aistudio.google.com and try again.';
+        }
+        if (msg.includes('PERMISSION_DENIED') || msg.includes('quota')) {
+          return `❌ API quota exceeded or permission denied. Please check your key limits at aistudio.google.com.`;
+        }
+        // Model not found / not supported — try next model
+        lastError = msg;
+        continue;
+      }
+
+      const data = await res.json();
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (text) return text;
+      lastError = 'Empty response';
+      continue;
+
+    } catch (e) {
+      lastError = e.message;
+      continue;
+    }
+  }
+
+  // All models failed
+  return `❌ Could not connect to Gemini AI. All models tried.\nLast error: ${lastError}\n\n💡 Tip: Ensure your API key is valid and has the Generative Language API enabled at console.cloud.google.com.`;
+}
+
+/* ════════════════════════════
+   CHATBOT WITH GEMINI
+   ════════════════════════════ */
+const chatHistory = [];
+const CHAT_SYSTEM = `તમે આરસી એજ્યુકેશન AI આસિસ્ટન્ટ છો — Aarsi AI Education EdTech Platform ના નિષ્ણાત AI.
+You are a bilingual (Gujarati + English) educational AI for Gujarat, India.
+
+You expertly help:
+- 👨‍🏫 શિક્ષકો (Teachers): Lesson plans, AI tools, GSEB circulars, timetables, question papers, school administration
+- 🎓 વિદ્યાર્થીઓ (Students): GSEB Class 10 Maths (Polynomials, Real Numbers, Arithmetic Progressions), SSC/HSC board exam tips, Science, Commerce
+- 🏫 School Admins: ERP systems, attendance, report cards, GR registers, digital transformation
+- 💡 AI Tools: ChatGPT/Gemini prompts for education, automation workflows
+
+Key expertise areas:
+- GSEB ધોરણ ૧૦ ગણિત (Maths): બહુપદી (Polynomials), વાસ્તવિક સંખ્યાઓ, સમાંતર શ્રેણી, ત્રિકોણ
+- Gujarat school administration, NEP 2020, NCERT/GSEB curriculum
+- AI tools for teachers: ChatGPT, Gemini, automation for school tasks
+
+Response rules:
+- If asked in Gujarati (ગુજરાતી), ALWAYS respond fully in Gujarati with English technical terms in brackets
+- If asked in English, respond in English
+- If asked in Hindi, respond in Hindi  
+- Keep responses concise but helpful (under 180 words)
+- Always be encouraging: "ઉત્તમ!", "સરસ!", "Great question!"
+- For math problems, show step-by-step solutions`;
+
+function toggleChat() {
+  const chatbot = document.getElementById('chatbot');
+  chatbot.classList.toggle('open');
+  // Reset suggestions when reopening
+  if (chatbot.classList.contains('open')) {
+    const sugg = document.getElementById('chatSuggestions');
+    if (sugg && document.getElementById('chatBody').children.length <= 1) {
+      sugg.style.display = 'flex';
+    }
+  }
+}
+
+function quickChat(text) {
+  document.getElementById('chatInput').value = text;
+  document.getElementById('chatSuggestions').style.display = 'none';
+  sendChat();
+}
+
+async function sendChat() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  input.value = '';
+  appendChatMsg(msg, 'user');
+  const btn = document.getElementById('chatSendBtn');
+  btn.textContent = '⏳';
+  btn.disabled = true;
+
+  const historyContext = chatHistory.slice(-6).map(m =>
+    `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.text}`
+  ).join('\n');
+
+  const fullPrompt = historyContext
+    ? `${CHAT_SYSTEM}\n\nConversation so far:\n${historyContext}\n\nUser: ${msg}`
+    : `${CHAT_SYSTEM}\n\nUser: ${msg}`;
+
+  const reply = await callGemini(fullPrompt);
+
+  chatHistory.push({ role: 'user', text: msg });
+  chatHistory.push({ role: 'assistant', text: reply });
+
+  appendChatMsg(reply, 'bot');
+  btn.textContent = '→';
+  btn.disabled = false;
+}
+
+function appendChatMsg(text, role) {
+  const body = document.getElementById('chatBody');
+  const div = document.createElement('div');
+  div.className = 'cp-msg';
+  if (role === 'user') {
+    div.style.cssText = 'background:linear-gradient(135deg,#1E3A8A,#2563EB);color:white;border-radius:8px 8px 2px 8px;text-align:right;margin-left:20px';
+  } else {
+    div.style.cssText = 'margin-right:20px';
+    // Typing animation
+    div.textContent = '...';
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+    setTimeout(() => {
+      div.textContent = text;
+      body.scrollTop = body.scrollHeight;
+    }, 300);
+    return;
+  }
+  div.textContent = text;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+/* ════════════════════════════
+   AI TOOLS MODAL + GEMINI
+   ════════════════════════════ */
+const TOOLS = {
+  lesson: {
+    icon: '📝', title: 'AI પાઠ આયોજન (Lesson Planner)',
+    fields: [
+      { id: 'subject', label: 'શાળા વિષય (Subject)', placeholder: 'e.g. Maths - ગણિત, Science - વિજ્ઞાન' },
+      { id: 'grade', label: 'ધોરણ (Grade)', placeholder: 'e.g. ધોરણ ૧૦, Standard 9' },
+      { id: 'topic', label: 'પ્રકરણ / ટોપિક (Topic)', placeholder: 'e.g. બહુપદીઓ (Polynomials), Real Numbers' },
+      { id: 'duration', label: 'સમયગાળો (Duration)', placeholder: 'e.g. ૪૫ મિનિટ' },
+    ],
+    prompt: (f) => `You are an elite educational curriculum designer for Gujarat Secondary and Higher Secondary Education Board (GSEB).
+Generate a highly professional, ready-to-use Lesson Plan (પાઠ આયોજન) in Gujarati (ગુજરાતી માધ્યમ).
+Subject (વિષય): ${f.subject || 'Maths - ગણિત'}
+Topic (પ્રકરણ/ટોપિક): ${f.topic || 'વાસ્તવિક સંખ્યાઓ (Real Numbers)'}
+Grade (ધોરણ): ${f.grade || '10'}
+Duration (સમયગાળો): ${f.duration || '45 Minutes'}
+
+Include structural sections with elegant formatting in Markdown:
+1. **શિખવવાના હેતુઓ (Learning Objectives)**: Knowledge, Skill, Attitude.
+2. **જરૂરી સાધન સામગ્રી (Teaching Aids / TLM)**.
+3. **પૂર્વજ્ઞાન ની ચકાસણી (Previous Knowledge Check)**: 3-4 interesting bridge questions.
+4. **વિષયાભિમુખ અને રજૂઆત (Introduction & Step-by-Step Presentation)**:
+   - Step 1: Engage (5-10 mins)
+   - Step 2: Explore & Explain (15-20 mins)
+   - Step 3: Real-world applications (10 mins)
+5. **મૂલ્યાંકન (Assessment / Quick Quiz)**: 3 interactive questions.
+6. **ગૃહકાર્ય (Homework assignment for students)**.
+Respond in rich Markdown in professional Gujarati. Add English sub-technical terms in parentheses.`
+  },
+  homework: {
+    icon: '📚', title: 'હોમવર્ક જનરેટર (Homework Sheets)',
+    fields: [
+      { id: 'subject', label: 'શાળા વિષય (Subject)', placeholder: 'e.g. Maths - ગણિત, Science' },
+      { id: 'topic', label: 'પ્રકરણ (Chapter / Topic)', placeholder: 'e.g. વાસ્તવિક સંખ્યાઓ (Real Numbers)' },
+      { id: 'difficulty', label: 'મુશ્કેલી સ્તર (Difficulty)', placeholder: 'સરળ / મધ્યમ / ઉચ્ચ (HOTS)' },
+      { id: 'count', label: 'પ્રશ્નોની સંખ્યા (No. of Questions)', placeholder: 'e.g. 5, 10' },
+    ],
+    prompt: (f) => `Generate a GSEB-standard homework assignment (ગૃહકાર્ય) in Gujarati for:
+Subject: ${f.subject || 'Maths - ગણિત'}
+Chapter: ${f.topic || 'Real Numbers'}
+Difficulty: ${f.difficulty || 'Medium'}
+Number of questions: ${f.count || 5}
+
+Include:
+- MCQ questions (1 mark each)
+- Short answer questions (2 marks)
+- Long answer / Problem solving (4 marks)
+- 1 HOTS / Creative application question
+- Bonus challenge for fast learners
+Format clearly with question numbers. Suitable for GSEB/CBSE Class 10 curriculum. Write question content in Gujarati where appropriate.`
+  },
+  timetable: {
+    icon: '🗓️', title: 'સ્ટડી ટાઈમટેબલ (Study Timetable)',
+    fields: [
+      { id: 'grade', label: 'ધોરણ / Class', placeholder: 'e.g. ધોરણ ૧૦ (SSC Exam Ready)' },
+      { id: 'hoursPerDay', label: 'દૈનિક અભ્યાસ કલાક (Hours/Day)', placeholder: 'e.g. 6 hours' },
+      { id: 'type', label: 'ટાઈમટેબલ પ્રકાર (Type)', placeholder: 'Student Study / School Class / Exam Prep' },
+    ],
+    prompt: (f) => `Generate a rigorous, highly optimized Daily Study Timetable (સ્માર્ટ સ્ટડી સમયપત્રક) in Gujarati.
+Class: ${f.grade || 'ધોરણ ૧૦ (Standard 10 - SSC Exam Ready)'}
+Schedule Type: ${f.type || 'Student Exam Preparation'}
+Target Daily Hours: ${f.hoursPerDay || '6 hours'}
+
+Design a matrix-style time allocation plan from morning to night. Include:
+- Subject study blocks (Mathematics, Science, Social Science, Language etc.)
+- Healthy active breaks (યોગ / ટૂંકી કસરત / મનન)
+- Revision windows (પુનરાવર્તન કલાક)
+- Weekly Self-Mock Assessment schedule
+- Pro tips for board exams (બોર્ડ પરીક્ષા ની તૈયારીઓ માટે સુવર્ણ ચાવીઓ)
+Format as a neat timetable table with time slots.`
+  },
+  qpaper: {
+    icon: '📄', title: 'પ્રશ્નપત્ર સેટ (Question Paper)',
+    fields: [
+      { id: 'subject', label: 'શાળા વિષય (Subject)', placeholder: 'e.g. Maths - ગણિત' },
+      { id: 'chapters', label: 'સમાવિષ્ટ પ્રકરણો (Chapters)', placeholder: 'e.g. બહુપદીઓ અને સમાંતર શ્રેણી' },
+      { id: 'examType', label: 'પરીક્ષા મોડ (Exam Type)', placeholder: 'સાપ્તાહિક / દ્વિતીય / પ્રિલિમ' },
+      { id: 'totalMarks', label: 'કુલ ગુણ (Total Marks)', placeholder: 'e.g. 25, 50, 100' },
+    ],
+    prompt: (f) => `You are a GSEB question paper setter. Create a Gujarat Secondary Education Board (GSEB) standard question paper in Gujarati.
+Subject: ${f.subject || 'Maths - ગણિત'}
+Chapters: ${f.chapters || 'બહુપદીઓ (Polynomials)'}
+Exam Type: ${f.examType || 'Unit Test'}
+Total Marks: ${f.totalMarks || 25}
+
+Format GSEB-style:
+- Official header with school name placeholder, date, time, total marks
+- Section A: MCQ (1 mark each) — 5 questions  
+- Section B: Short Answer (2 marks each) — 5 questions
+- Section C: Long Answer (3-4 marks each) — 3 questions
+- Section D: Problem Solving
+Include variety: definition, application, diagram-based, calculation. 
+Write questions in Gujarati with English technical terms in brackets.`
+  },
+  circular: {
+    icon: '📋', title: 'પરિપત્ર ડ્રાફ્ટ (Circular Maker)',
+    fields: [
+      { id: 'school', label: 'શાળાનું નામ (School Name)', placeholder: 'e.g. Shri Sarvajanik Vidhyalaya, Ahmedabad' },
+      { id: 'title', label: 'પરિપત્ર વિષય (Subject)', placeholder: 'e.g. વાર્ષિક ઉત્સવ, Parent Meeting, Exam Schedule' },
+      { id: 'targetAudience', label: 'લક્ષ જૂથ (Audience)', placeholder: 'e.g. વાલીઓ, સ્ટાફ, વિદ્યાર્થીઓ' },
+      { id: 'date', label: 'તારીખ (Date)', placeholder: 'e.g. ૨૪-૦૫-૨૦૨૬' },
+    ],
+    prompt: (f) => `You are the Principal of "${f.school || 'Aarsi AI Model School'}". Write a warm, professional, official School Circular (શાળા પરિપત્ર) in authentic administrative Gujarati.
+Subject/Title: ${f.title || 'Annual Sports Day'}
+Date of Issue: ${f.date || new Date().toLocaleDateString('en-IN')}
+Target Audience: ${f.targetAudience || 'Parents & Students'}
+
+Draft a circular with beautiful letterhead spacing, containing:
+- Official Circular ID Placeholder (e.g. SCHOOL/2026/047)
+- Respectful salutation (માનનીય વાલીશ્રીઓ તથા વહાલા વિદ્યાર્થીઓ)
+- Clear paragraph explaining importance of the announcement
+- Tables or bullet points for date/time/requirements if relevant
+- An inspiring closing slogan
+- Principal Signature block with neat seal markup
+Write in formal Gujarati with proper letter formatting.`
+  },
+  prompt: {
+    icon: '💬', title: 'AI પ્રૉમ્પ્ટ સીકર (Prompt Generator)',
+    fields: [
+      { id: 'role', label: 'તમારો રોલ (Your Role)', placeholder: 'e.g. Maths Teacher, Principal, Student' },
+      { id: 'task', label: 'ધ્યેય કાર્ય (Target Task)', placeholder: 'e.g. પ્રકરણ સમજાવવું, MCQ બનાવવા, Letter draft' },
+      { id: 'subject', label: 'લક્ષ્ય વિષય (Subject / Context)', placeholder: 'e.g. Geometry, Class 10, GSEB Board' },
+    ],
+    prompt: (f) => `Generate high-performance ChatGPT/Gemini prompts for Gujarat teachers or students.
+User Role: ${f.role || 'ગણિત શિક્ષક (Maths Teacher)'}
+Target Task: ${f.task || 'પ્રકરણ ભૌમિતિ ટીએલએમ વડે રસપ્રદ બનાવવું'}
+Subject Context: ${f.subject || 'Mathematics / Geometry'}
+
+Write the output in structured blocks:
+1. **જાદુઈ પ્રોમ્પ્ટ (The Master Prompt)** - Write 3-5 ready-to-copy prompts in English markdown code blocks for direct use in ChatGPT/Gemini.
+2. **કેવી રીતે ઉપયોગ કરવો (Execution Guide)** - Step by step instruction in Gujarati on how to use these prompts.
+3. **પ્રોમ્પ્ટ ના ફાયદા (Expected Outcome/Benefits)** - What results to expect in Gujarati.
+4. **Customization Tips** - How to adapt these for different classes/topics.`
+  },
+  attendance: {
+    icon: '✅', title: 'હાજરી વિશ્લેષણ (Attendance Analyzer)',
+    fields: [
+      { id: 'classname', label: 'વર્ગ / Class', placeholder: 'e.g. ધોરણ ૧૦-A, Class 9-B' },
+      { id: 'data', label: 'હાજરી ડેટા (Attendance Data / Pattern)', placeholder: 'e.g. 45 students, avg 82%, 5 below 75%, Mon/Fri most absences', type: 'textarea' },
+    ],
+    prompt: (f) => `You are a warm, intelligent educational counselor for Gujarat schools. Analyze this school attendance data and provide actionable insights in Gujarati.
+Class: ${f.classname || 'ધોરણ ૧૦-A'}
+Attendance Data: ${f.data || '45 students, average attendance 82%, 5 students below 75%'}
+
+Provide:
+1. **કુલ સારાંશ (Overall Analysis Summary)** in Gujarati
+2. **પ્રવૃત્તિ પેટર્ન (Identified Patterns and Concerns)**
+3. **જોખમ ધરાવતા વિદ્યાર્થીઓ (Students at Risk)** — those below 75% attendance
+4. **કારણ વિશ્લેષણ (Likely Reasons)** for low attendance
+5. **શિક્ષક માટે કૃતિ આયોજન (Action Plan for Teachers)**
+6. **વાલી સંપર્ક (Parent Communication Suggestions)**
+7. **SMS/પત્ર નમૂનો (Template SMS/Letter for low attendance parents)** in Gujarati
+
+Keep it practical and encouraging for Indian school administrators.`
+  },
+  blogwrite: {
+    icon: '✍️', title: 'AI Blog Article Writer',
+    fields: [
+      { id: 'title', label: 'લેખ શીર્ષક (Article Title)', placeholder: 'e.g. AI tools for Gujarat teachers 2024' },
+      { id: 'category', label: 'Category', placeholder: 'GSEB Solutions / AI For Teachers / School ERP' },
+      { id: 'outline', label: 'Key Points / Outline (optional)', placeholder: 'e.g. Benefits, steps, examples, tips', type: 'textarea' },
+    ],
+    prompt: (f) => `You are a premium educational editor and GSEB Gujarat Board expert author.
+Write a complete, professional, motivational educational blog article in Gujarati based on:
+Article Title: ${f.title || 'ગણિત અને AI ટેકનોલોજીનો સમન્વય'}
+Category: ${f.category || 'AI-Tech'}
+Outline: ${f.outline || 'Educational technology benefits for students and teachers'}
+
+Write in beautiful GSEB-style educational Gujarati prose.
+Format with Markdown headers:
+Use "## [Section Title]" for subheadings.
+Include:
+- Engaging introduction paragraph
+- 2-3 detailed sections with practical examples
+- Real-world applications for Gujarat schools
+- Conclusion with call-to-action
+- Make it readable, encouraging, and technically accurate.
+Write at least 400 words. Add English technical terms in brackets throughout.`
+  },
+  performance: {
+    icon: '📊', title: 'પ્રદર્શન વિશ્લેષક (Performance Analyzer)',
+    fields: [
+      { id: 'studentName', label: 'વિદ્યાર્થીનું નામ (Student Name)', placeholder: 'e.g. રિયા પટેલ, Arjun Shah' },
+      { id: 'scores', label: 'વિષયવાર ગુણ (Subject Scores)', placeholder: 'e.g. ગણિત:65, વિજ્ઞાન:72, અંગ્રેજી:80, સામાજિક:68' },
+      { id: 'attendance', label: 'હાજરી % (Attendance)', placeholder: 'e.g. 92%' },
+    ],
+    prompt: (f) => `You are a warm, intelligent educational counselor. Analyze the academic profile of this student and write a comprehensive Student Assessment Report (વિદ્યાર્થી પ્રગતિ મૂલ્યાંકન અહેવાલ) in encouraging, expert Gujarati.
+Student Name: ${f.studentName || 'વિવેક પ્રજાપતિ'}
+Subject Scores: ${f.scores || 'Maths:72, Science:68, English:80, Gujarati:85, Social:75'}
+Attendance Rate: ${f.attendance || '88%'}
+
+Your report must contain:
+1. **કુલ ક્ષમતાનું પૃથક્કરણ (Strengths Analysis)**: Point out their strongest areas.
+2. **સુધારણા માટેના સ્પોટ્સ (Critical Improvement Zones)**: Detail where they need focus.
+3. **વૈયક્તિક સ્માર્ટ ટાસ્ક લિસ્ટ (Personalized Action Items for next month)**.
+4. **ભલામણ અભ્યાસ કાર્યક્રમ (Recommended Study Schedule)** — daily routine in Gujarati.
+5. **વિદ્યાર્થીને પ્રેરણાદાયી સંદેશ (Motivational Message for student)** in warm Gujarati.
+6. **માતા-પિતા માટે સુચનો (Parent Counseling Tip)** in warm Gujarati.`
+  }
+};
+let currentTool = null;
+
+// ── NEW TOOLS ──
+Object.assign(TOOLS, {
+  videofind: {
+    icon: '🎥', title: 'GSHSEB Video Finder',
+    fields: [
+      { id: 'topic',   label: 'વિષય / ટોપિક (Topic)',   placeholder: 'e.g. Quadratic Equations, ફોટોસિન્થેસિસ, French Revolution' },
+      { id: 'grade',   label: 'ધોરણ (Grade)',            placeholder: 'e.g. 9, 10, 11, 12' },
+      { id: 'subject', label: 'વિષય (Subject)',           placeholder: 'e.g. Mathematics, Science, Physics, Biology' },
+    ],
+    prompt: (f) => `You are a GSEB educational video curator. The user wants to find relevant YouTube videos from GSHSEB Gandhinagar official channel for:
+Topic: ${f.topic || 'Quadratic Equations'}
+Grade: ${f.grade || '10'}
+Subject: ${f.subject || 'Mathematics'}
+
+Provide a structured guide in Gujarati + English:
+
+## 🎥 GSHSEB Official Channel — Video Search Guide
+
+**Channel:** GSHSEB Gandhinagar
+**YouTube:** https://www.youtube.com/@GSHSEBGandhinagar
+**Channel ID:** UCUFyTnrBzmlmXiFXS28_ldA
+
+### 🔍 Recommended Search Queries (copy & paste on YouTube):
+List 5 specific search queries that will find relevant videos for this topic on the GSHSEB channel. Format each as a copyable search string.
+
+### 📚 Related Topics to Also Search:
+List 3 related sub-topics from the GSEB syllabus the student should also watch.
+
+### 📋 How to Use YouTube for GSEB Study (Gujarati):
+Give 4 practical tips in Gujarati for using YouTube effectively for GSEB board exam preparation.
+
+### ⭐ Other Useful Channels:
+List 3 other reliable Gujarati/Hindi YouTube channels for GSEB Std ${f.grade || '10'} ${f.subject || 'Mathematics'} besides GSHSEB.
+
+Write in bilingual format (Gujarati + English) and make it actionable.`
+  },
+
+  mcqquiz: {
+    icon: '📖', title: 'GSEB MCQ Quiz Generator',
+    fields: [
+      { id: 'subject',  label: 'વિષય (Subject)',          placeholder: 'e.g. Mathematics, Science, Physics, Biology' },
+      { id: 'chapter',  label: 'પ્રકરણ (Chapter)',         placeholder: 'e.g. Real Numbers, Photosynthesis, Laws of Motion' },
+      { id: 'grade',    label: 'ધોરણ (Grade)',             placeholder: 'e.g. 9, 10, 11, 12' },
+      { id: 'count',    label: 'પ્રશ્ન સંખ્યા (No. of MCQs)', placeholder: 'e.g. 10, 15, 20' },
+    ],
+    prompt: (f) => `You are a senior GSEB question paper setter. Generate a high-quality MCQ practice quiz in Gujarati with English technical terms.
+
+Subject: ${f.subject || 'Mathematics - ગણિત'}
+Chapter: ${f.chapter || 'Real Numbers - વાસ્તવિક સંખ્યાઓ'}
+Grade: Std ${f.grade || '10'} (GSEB Board)
+Number of MCQs: ${f.count || 15}
+
+Format each question exactly like this:
+**Q1.** [Question text in Gujarati with English terms in brackets]
+(A) [Option]  (B) [Option]  (C) [Option]  (D) [Option]
+✅ **Answer:** (X) — [Short explanation in Gujarati]
+
+Guidelines:
+- Mix difficulty: 40% easy, 40% medium, 20% HOTS
+- Include concept-based, formula-based, and application-based questions
+- Match GSEB board exam pattern exactly
+- Add a **📊 Quiz Summary** at the end showing topic coverage
+- End with **💡 3 Important Tips** for this chapter in Gujarati`
+  },
+
+  annualplan: {
+    icon: '📅', title: 'Annual Academic Planner',
+    fields: [
+      { id: 'subject',  label: 'વિષય (Subject)',           placeholder: 'e.g. Mathematics, Science, Physics' },
+      { id: 'grade',    label: 'ધોરણ (Grade)',             placeholder: 'e.g. 10, 11, 12' },
+      { id: 'months',   label: 'શૈક્ષણિક મહિના (Months)', placeholder: 'e.g. June to March (10 months)' },
+      { id: 'exams',    label: 'પરીક્ષા (Exam Schedule)',  placeholder: 'e.g. Unit Test: Aug, Oct | Prelim: Dec | Board: Mar' },
+    ],
+    prompt: (f) => `You are a veteran GSEB curriculum planner. Create a detailed Annual Academic Syllabus Planner (વાર્ષિક અભ્યાસક્રમ આયોજન) for:
+
+Subject: ${f.subject || 'Mathematics - ગણિત'}
+Grade: Std ${f.grade || '10'} (GSEB Board)
+Academic Year Duration: ${f.months || 'June to March (10 months)'}
+Exam Schedule: ${f.exams || 'Unit Test: Aug, Oct | Preliminary: Dec | Board: March'}
+
+Generate a **month-wise chapter distribution table** in this format:
+
+| મહિનો (Month) | પ્રકરણ (Chapter) | મુખ્ય વિભાગ (Key Topics) | અધ્યયન દિવસ (Teaching Days) | પ્રીટેસ્ટ |
+|---|---|---|---|---|
+
+Then provide:
+## 📋 સૂચિ (Notes for Teachers):
+- Which chapters need extra time and why
+- Revision weeks before exams
+- Suggested TLM and activities per unit
+
+## ⚠️ Board Exam Focus Areas:
+- Top 5 most important chapters for marks
+- Common mistakes students make
+
+Write in professional Gujarati with English sub-terms. Make it practical and printable.`
+  },
+
+  parentmsg: {
+    icon: '🔔', title: 'Parent SMS / WhatsApp Maker',
+    fields: [
+      { id: 'school',   label: 'શાળાનું નામ (School Name)',  placeholder: 'e.g. Sarvajanik Vidhyalaya, Ahmedabad' },
+      { id: 'purpose',  label: 'સંદેશ હેતુ (Message Purpose)', placeholder: 'e.g. Result, Fee reminder, Meeting, Holiday, Event, Low attendance' },
+      { id: 'details',  label: 'વિગત (Key Details)',           placeholder: 'e.g. Date, marks, amount, time etc.' },
+      { id: 'tone',     label: 'ભાષા (Language / Tone)',       placeholder: 'Gujarati formal / Gujarati friendly / Hindi / English' },
+    ],
+    prompt: (f) => `You are the communication officer of "${f.school || 'Aarsi AI Model School'}". Draft professional, warm parent messages for school communication.
+
+Purpose: ${f.purpose || 'Monthly fee reminder'}
+Key Details: ${f.details || 'Fee due date: 10th of this month, Amount: ₹2500'}
+Language/Tone: ${f.tone || 'Gujarati — warm and professional'}
+
+Generate ALL 3 formats:
+
+## 📱 WhatsApp Message (150 words max):
+[Full message with emoji, school name, and clear call-to-action]
+
+## 💬 SMS Version (160 chars max):
+[Ultra-short SMS version]
+
+## 📋 Formal Letter Version (for printing):
+[Full formal Gujarati letter with letterhead placeholder, proper salutation, body, and signature block]
+
+Guidelines:
+- Use respectful Gujarati: "આદરણીય વાલીશ્રી" / "માનનીય"
+- Keep tone encouraging, never threatening for sensitive messages
+- Include school contact details placeholder
+- Add relevant emoji for WhatsApp version
+- Close with warm school motto if appropriate`
+  },
+
+  conceptexp: {
+    icon: '🧠', title: 'Concept Explainer (Bilingual)',
+    fields: [
+      { id: 'concept',  label: 'સંકલ્પ / Concept',           placeholder: 'e.g. Photosynthesis, Quadratic Formula, Newton\'s 3rd Law' },
+      { id: 'grade',    label: 'ધોરણ (Grade)',               placeholder: 'e.g. 9, 10, 11, 12' },
+      { id: 'subject',  label: 'વિષય (Subject)',             placeholder: 'e.g. Biology, Mathematics, Physics' },
+      { id: 'level',    label: 'સ્તર (Level)',               placeholder: 'Basic / Intermediate / Advanced / Board Exam / JEE/NEET' },
+    ],
+    prompt: (f) => `You are an award-winning GSEB teacher and educational content writer. Explain the following concept in a way that makes every student understand it instantly.
+
+Concept: ${f.concept || 'Photosynthesis - પ્રકાશ સંશ્લેષણ'}
+Subject: ${f.subject || 'Biology - જીવવિજ્ઞાન'}
+Grade: Std ${f.grade || '11'} (GSEB Board)
+Level: ${f.level || 'Intermediate — Board Exam focused'}
+
+Structure your explanation as:
+
+## 🌟 સરળ ભાષામાં (Simple Explanation — 2 sentences in Gujarati):
+
+## 📖 વ્યાખ્યા (Definition — formal GSEB style):
+
+## 🎯 મુખ્ય મુદ્દા (Key Points — bullet list):
+
+## 🧪 વૈજ્ઞાનિક સમજ (Scientific Deep Dive):
+[Detailed explanation with proper terminology]
+
+## 💡 સરળ ઉદાહરણ (Real-life Analogy in Gujarati):
+[A relatable daily-life comparison]
+
+## 📐 સૂત્ર / આકૃતિ વર્ણન (Formula or Diagram Description if applicable):
+
+## 📝 બોર્ડ પ્રશ્ન (Likely Board Exam Question + Model Answer):
+
+## ⚡ યાદ રાખવા Tips (Memory Tricks / Mnemonics in Gujarati):
+
+Write primarily in Gujarati with English technical terms in brackets throughout.`
+  },
+
+  reportcard: {
+    icon: '📝', title: 'Report Card Remark Writer',
+    fields: [
+      { id: 'studentName', label: 'વિદ્યાર્થી નામ (Student Name)',     placeholder: 'e.g. Riya Patel, Arjun Shah' },
+      { id: 'grade',       label: 'ધોરણ (Grade / Class)',              placeholder: 'e.g. ધોરણ 7-A, Class 10-B' },
+      { id: 'performance', label: 'પ્રદર્શન (Performance Summary)',    placeholder: 'e.g. Average student, good in Maths, weak in English, 82% attendance' },
+      { id: 'behaviour',   label: 'વ્યવહાર (Behaviour / Attitude)',    placeholder: 'e.g. Active, shy, disciplined, needs motivation' },
+    ],
+    prompt: (f) => `You are a compassionate, experienced GSEB teacher writing official Report Card remarks. Write personalized, positive yet honest remarks for:
+
+Student Name: ${f.studentName || 'Vivek Prajapati'}
+Grade/Class: ${f.grade || 'ધોરણ 10-A'}
+Academic Performance: ${f.performance || 'Average — good in Maths (78%), needs improvement in English (52%), Science (65%)'}
+Behaviour & Attitude: ${f.behaviour || 'Disciplined, participates in class activities, needs more confidence'}
+
+Generate ALL formats a teacher needs:
+
+## ✍️ Gujarati Remark (50–60 words):
+[Warm, formal Gujarati remark for report card]
+
+## 🇬🇧 English Remark (40–50 words):
+[Professional English version]
+
+## 🌟 Encouraging Detailed Remark (for annual report — 80–100 words):
+[Covers academics, character, improvements made, future advice — in Gujarati]
+
+## 💬 Parent Meeting Talking Points (3 bullet points):
+[Key constructive points to discuss with parents in simple Gujarati]
+
+Guidelines:
+- Always start with a strength/positive observation
+- Be constructive — never discouraging
+- Use respectful, formal educational Gujarati
+- Match tone to performance (struggling student = extra encouragement)`
+  }
+});
+
+function openTool(toolId) {
+  if (!GEMINI_KEY) {
+    showApiModal();
+    return;
+  }
+  currentTool = toolId;
+  const tool = TOOLS[toolId];
+  document.getElementById('toolModalIcon').textContent = tool.icon;
+  document.getElementById('toolModalTitle').textContent = tool.title;
+  document.getElementById('toolResultArea').style.display = 'none';
+
+  // Build form
+  let html = `<div style="display:flex;flex-direction:column;gap:14px">`;
+  tool.fields.forEach(f => {
+    html += `<div>
+      <label style="display:block;font-size:.8rem;font-weight:600;color:var(--text-dark);margin-bottom:6px">${f.label}</label>`;
+    if (f.type === 'textarea') {
+      html += `<textarea id="tf_${f.id}" placeholder="${f.placeholder}" rows="4" style="
+        width:100%;padding:10px 14px;border:1.5px solid #E2E8F0;border-radius:10px;
+        font-family:'DM Sans',sans-serif;font-size:.85rem;resize:vertical;outline:none;
+      " onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#E2E8F0'"></textarea>`;
+    } else {
+      html += `<input id="tf_${f.id}" type="text" placeholder="${f.placeholder}" style="
+        width:100%;padding:10px 14px;border:1.5px solid #E2E8F0;border-radius:10px;
+        font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;
+      " onfocus="this.style.borderColor='#3B82F6'" onblur="this.style.borderColor='#E2E8F0'">`;
+    }
+    html += `</div>`;
+  });
+  html += `</div>
+  <button onclick="runTool()" id="runToolBtn" style="
+    width:100%;margin-top:18px;padding:13px;
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);color:white;
+    border:none;border-radius:10px;font-family:'Poppins',sans-serif;
+    font-weight:700;font-size:.92rem;cursor:pointer;transition:opacity .2s;
+  " onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
+    ✨ Generate with Gemini AI
+  </button>`;
+
+  document.getElementById('toolFormArea').innerHTML = html;
+  document.getElementById('toolModal').style.display = 'flex';
+}
+
+async function runTool() {
+  const tool = TOOLS[currentTool];
+  const fields = {};
+  tool.fields.forEach(f => {
+    const el = document.getElementById('tf_' + f.id);
+    fields[f.id] = el ? el.value.trim() : '';
+  });
+
+  // Check at least first field filled
+  const firstVal = fields[tool.fields[0].id];
+  if (!firstVal) {
+    alert(`Please fill in at least the "${tool.fields[0].label}" field.`);
+    return;
+  }
+
+  const btn = document.getElementById('runToolBtn');
+  btn.textContent = '⏳ Generating with Gemini…';
+  btn.disabled = true;
+
+  const prompt = tool.prompt(fields);
+  const result = await callGemini(prompt);
+
+  document.getElementById('toolFormArea').style.display = 'none';
+  const ra = document.getElementById('toolResultArea');
+  ra.style.display = 'block';
+  document.getElementById('toolResultText').textContent = result;
+
+  btn.textContent = '✨ Generate with Gemini AI';
+  btn.disabled = false;
+}
+
+function resetToolModal() {
+  document.getElementById('toolResultArea').style.display = 'none';
+  document.getElementById('toolFormArea').style.display = 'block';
+}
+
+function closeToolModal() {
+  document.getElementById('toolModal').style.display = 'none';
+}
+
+function copyToolResult() {
+  const text = document.getElementById('toolResultText').textContent;
+  navigator.clipboard.writeText(text).then(() => showToast('📋 Copied to clipboard!'));
+}
+
+// Close tool modal on backdrop click
+document.getElementById('toolModal').addEventListener('click', function(e) {
+  if (e.target === this) closeToolModal();
+});
+
+/* ── TOAST NOTIFICATION ── */
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `
+    position:fixed;bottom:100px;left:50%;transform:translateX(-50%);
+    background:var(--navy);color:white;padding:10px 20px;border-radius:10px;
+    font-size:.85rem;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);
+    animation:fadeUp .3s ease;font-family:'DM Sans',sans-serif;white-space:nowrap;
+  `;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
+/* ── SHAKE ANIMATION ── */
+const shakeStyle = document.createElement('style');
+shakeStyle.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}`;
+document.head.appendChild(shakeStyle);
+
+/* ════════════════════════════
+   EXISTING SITE FUNCTIONALITY
+   ════════════════════════════ */
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  const prog = document.getElementById('progress-bar');
+  const h = document.documentElement;
+  const pct = (window.scrollY / (h.scrollHeight - h.clientHeight)) * 100;
+  prog.style.width = pct + '%';
+});
+
+// Dark mode
+function toggleDark() {
+  document.body.classList.toggle('dark');
+  document.querySelector('.dark-toggle').textContent =
+    document.body.classList.contains('dark') ? '☀️' : '🌙';
+}
+
+// Mobile nav
+function toggleNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Animated counters
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const step = target / (2000 / 16);
+  let current = 0;
+  const timer = setInterval(() => {
+    current += step;
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = Math.floor(current).toLocaleString('en-IN');
+  }, 16);
+}
+
+// Intersection observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      if (e.target.classList.contains('counters-grid')) {
+        document.querySelectorAll('.counter-num').forEach(animateCounter);
+      }
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+const cg = document.querySelector('.counters-grid');
+if (cg) observer.observe(cg);
+
+// ERP bar chart
+document.querySelectorAll('.eca-bar').forEach((b, i) => {
+  const heights = [75, 82, 68, 90, 85, 94, 88, 96, 92, 89, 94, 91];
+  b.style.height = heights[i % heights.length] + '%';
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const el = document.querySelector(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+/* ════════════════════════════════════════
+   GANIT ERP — Mathematics Interactive Tool
+   ════════════════════════════════════════ */
+
+// Tab navigation
+document.querySelectorAll('.erp-gtab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.erp-gtab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.erp-gmodule').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.gtarget).classList.add('active');
+  });
+});
+
+// Gujarati digits helper
+const gGuDigits = ['૦','૧','૨','૩','૪','૫','૬','૭','૮','૯'];
+function gToGu(n) { return String(n).split('').map(c => /[0-9]/.test(c) ? gGuDigits[+c] : c).join(''); }
+const gSupMap = {'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'};
+function gSup(n) { return String(n).split('').map(d => gSupMap[d] || d).join(''); }
+
+// Prime factorization utilities
+function gPrimeFactors(n) {
+  const f = []; let x = n;
+  for (let p = 2; p*p <= x; p++) while (x%p===0) { f.push(p); x=Math.floor(x/p); }
+  if (x>1) f.push(x); return f;
+}
+function gIsPrime(n) {
+  if (n<2) return false; if (n<4) return true; if (n%2===0) return false;
+  for (let i=3; i*i<=n; i+=2) if (n%i===0) return false; return true;
+}
+function gFactorMap(factors) { const m={}; factors.forEach(f=>m[f]=(m[f]||0)+1); return m; }
+function gFmtFactorized(n) {
+  if (n===1) return '1'; if (gIsPrime(n)) return String(n);
+  const fm=gFactorMap(gPrimeFactors(n));
+  return Object.keys(fm).map(Number).sort((a,b)=>a-b).map(p=>fm[p]===1?String(p):`${p}${gSup(fm[p])}`).join(' × ');
+}
+function gFmtRaw(n) { if (gIsPrime(n)) return String(n); return gPrimeFactors(n).join(' × '); }
+
+/* ── MODULE 1: FACTOR TREE ── */
+function gBuildTree(n) {
+  if (n<2) return null; if (gIsPrime(n)) return {value:n,prime:true};
+  let p=2; while(n%p!==0) p++;
+  return {value:n,prime:false,left:{value:p,prime:true},right:gBuildTree(n/p)};
+}
+function gRenderTree(root) {
+  const NW=76,NH=36,RH=60,CW=90;
+  const placed=[];
+  function place(node,row,col) {
+    if (!node) return;
+    placed.push({value:node.value,prime:node.prime,row,col});
+    if (!node.prime) { place(node.left,row+1,col-1); place(node.right,row+1,col+1); }
+  }
+  place(root,0,0);
+  const minC=Math.min(...placed.map(p=>p.col));
+  const maxC=Math.max(...placed.map(p=>p.col));
+  const maxR=Math.max(...placed.map(p=>p.row));
+  placed.forEach(p=>{ p.col=p.col-minC; });
+  const cols=maxC-minC+1,rows=maxR+1,PAD=20;
+  const w=PAD*2+(cols-1)*CW+NW, h=PAD*2+(rows-1)*RH+NH;
+  const cx=c=>PAD+c*CW+NW/2, cy=r=>PAD+r*RH+NH/2;
+  const byRC={}; placed.forEach(p=>{ byRC[`${p.row},${p.col}`]=p; });
+  const branches=[];
+  placed.forEach(p=>{
+    if (p.prime) return;
+    const lc=byRC[`${p.row+1},${p.col-1}`], rc=byRC[`${p.row+1},${p.col+1}`];
+    if (lc) branches.push({x1:cx(p.col),y1:cy(p.row)+NH/2,x2:cx(lc.col),y2:cy(lc.row)-NH/2,d:p.row*0.06});
+    if (rc) branches.push({x1:cx(p.col),y1:cy(p.row)+NH/2,x2:cx(rc.col),y2:cy(rc.row)-NH/2,d:p.row*0.06});
+  });
+  const bSVG=branches.map(b=>`<line class="g-branch" x1="${b.x1}" y1="${b.y1}" x2="${b.x2}" y2="${b.y2}" style="animation-delay:${b.d}s"/>`).join('');
+  const nSVG=placed.map(p=>{
+    const x=cx(p.col)-NW/2,y=cy(p.row)-NH/2,cls=p.prime?'gprime':'gcomposite',tc=p.prime?'g-node-text gprime-text':'g-node-text',d=p.row*0.06+0.05;
+    return `<rect class="g-node-rect ${cls}" x="${x}" y="${y}" width="${NW}" height="${NH}" rx="2" style="animation-delay:${d}s"/>
+            <text class="${tc}" x="${cx(p.col)}" y="${cy(p.row)}" style="animation-delay:${d}s">${p.value}</text>`;
+  }).join('');
+  return `<svg class="erpg-tree-svg" viewBox="0 0 ${w} ${h}" width="${Math.min(w,860)}" height="${h*Math.min(w,860)/w}" xmlns="http://www.w3.org/2000/svg">${bSVG}${nSVG}</svg>`;
+}
+
+function gRenderFactorTree(n) {
+  const out=document.getElementById('g-ft-result');
+  if (gIsPrime(n)) {
+    out.style.display='block';
+    out.innerHTML=`<div class="erpg-result-title">${gToGu(n)} — Prime <span class="erpg-badge">PRIME</span></div>
+      <p style="font-size:15px;line-height:1.8;color:var(--ink)"><strong>${gToGu(n)}</strong> પોતે જ <em>અવિભાજ્ય</em> સંખ્યા છે.</p>
+      <div class="erpg-final-line"><span class="gsmall">અવિભાજ્ય અવયવીકરણ →</span>${n} = ${n}</div>`;
+    return;
+  }
+  const tree=gBuildTree(n), factors=gPrimeFactors(n), fm=gFactorMap(factors);
+  const powerLine=Object.keys(fm).map(Number).sort((a,b)=>a-b).map(p=>fm[p]===1?String(p):`${p}${gSup(fm[p])}`).join(' × ');
+  out.style.display='block';
+  out.innerHTML=`<div class="erpg-result-title">અવયવ વૃક્ષ <span class="erpg-badge">n = ${gToGu(n)}</span></div>
+    <div class="erpg-tree-wrap">${gRenderTree(tree)}</div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;font-size:12px;color:#6b6557;font-style:italic">
+      <span><span style="display:inline-block;width:12px;height:12px;background:#d4a843;border:2px solid #1a1f2e;vertical-align:middle;margin-right:5px"></span>વિભાજ્ય</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:#b8442c;border:2px solid #1a1f2e;vertical-align:middle;margin-right:5px"></span>અવિભાજ્ય</span>
+    </div>
+    <div class="erpg-final-line"><span class="gsmall">સામાન્ય →</span>${n} = ${factors.join(' × ')}</div>
+    <div class="erpg-final-line" style="background:#b8442c;margin-top:6px"><span class="gsmall">ઘાત →</span>${n} = ${powerLine}</div>
+    <p style="margin-top:14px;font-size:13px;line-height:1.8;color:#1a1f2e"><strong>નિષ્કર્ષ:</strong> ${gToGu(n)} = ${powerLine} (અવ્યવ ―  ≥ 1 prime factor, unique)</p>`;
+}
+
+document.getElementById('g-ft-btn').addEventListener('click', () => {
+  const v=document.getElementById('g-ft-input').value.trim();
+  const err=document.getElementById('g-ft-error');
+  err.style.display='none';
+  if (!v) { err.textContent='સંખ્યા દાખલ કરો.'; err.style.display='block'; return; }
+  const n=Number(v);
+  if (!Number.isInteger(n)||n<2) { err.textContent='૨ કે તેથી મોટી પૂર્ણ સંખ્યા આપો.'; err.style.display='block'; return; }
+  if (n>1e12) { err.textContent='n ≤ 10¹² રાખો.'; err.style.display='block'; return; }
+  gRenderFactorTree(n);
+});
+document.getElementById('g-ft-clear').addEventListener('click', () => {
+  document.getElementById('g-ft-input').value='';
+  document.getElementById('g-ft-result').style.display='none';
+  document.getElementById('g-ft-error').style.display='none';
+});
+document.querySelectorAll('#gm1 .erpg-pill').forEach(b => b.addEventListener('click', () => {
+  document.getElementById('g-ft-input').value=b.dataset.gn;
+  document.getElementById('g-ft-btn').click();
+}));
+document.getElementById('g-ft-input').addEventListener('keydown', e => { if(e.key==='Enter') document.getElementById('g-ft-btn').click(); });
+
+/* ── MODULE 2: HCF & LCM ── */
+function gRenderHcfLcm(nums) {
+  const out=document.getElementById('g-ln-result');
+  const maps=nums.map(n=>gFactorMap(gPrimeFactors(n)));
+  const allP=new Set(); maps.forEach(m=>Object.keys(m).forEach(p=>allP.add(+p)));
+  const primes=[...allP].sort((a,b)=>a-b);
+  const hcfMap={},lcmMap={};
+  primes.forEach(p=>{
+    const pw=maps.map(m=>m[p]||0);
+    const mn=Math.min(...pw),mx=Math.max(...pw);
+    if (mn>0) hcfMap[p]=mn; if (mx>0) lcmMap[p]=mx;
+  });
+  function fmtM(m) { const k=Object.keys(m).map(Number).sort((a,b)=>a-b); if(!k.length)return'1'; return k.map(p=>m[p]===1?String(p):`${p}${gSup(m[p])}`).join(' × '); }
+  function valM(m) { return Object.keys(m).reduce((a,p)=>a*Math.pow(+p,m[p]),1); }
+  const hv=valM(hcfMap), lv=valM(lcmMap);
+  const pfCards=nums.map((n,i)=>`<div class="erpg-pf-card"><h4>સં. ${gToGu(i+1)}: ${gToGu(n)}</h4><div class="erpg-pf-eq">${n} = ${gFmtRaw(n)}</div><div class="erpg-pf-eq" style="color:#b8442c">= ${gFmtFactorized(n)}</div></div>`).join('');
+  let tbl=`<div style="overflow-x:auto;margin-bottom:16px"><table style="width:100%;border-collapse:collapse;font-family:'Courier New',monospace;font-size:13px">
+    <thead><tr style="background:#1a1f2e;color:#fbf7ee">
+      <th style="padding:9px 11px;border:2px solid #1a1f2e;text-align:left">Prime</th>
+      ${nums.map(n=>`<th style="padding:9px 11px;border:2px solid #1a1f2e">${gToGu(n)}</th>`).join('')}
+      <th style="padding:9px 11px;border:2px solid #1a1f2e;background:#2c5e5a">Min (HCF)</th>
+      <th style="padding:9px 11px;border:2px solid #1a1f2e;background:#b8442c">Max (LCM)</th>
+    </tr></thead><tbody>`;
+  primes.forEach(p=>{
+    const row=maps.map(m=>m[p]||0);
+    const mn=Math.min(...row),mx=Math.max(...row);
+    tbl+=`<tr><td style="padding:9px;border:2px solid #1a1f2e;font-weight:700;background:#f4ecdb">${p}</td>
+      ${row.map(v=>`<td style="padding:9px;border:2px solid #1a1f2e;text-align:center">${v===0?'—':`${p}${gSup(v)}`}</td>`).join('')}
+      <td style="padding:9px;border:2px solid #1a1f2e;text-align:center;background:rgba(44,94,90,.15);font-weight:700">${mn===0?'—':(mn===1?p:`${p}${gSup(mn)}`)}</td>
+      <td style="padding:9px;border:2px solid #1a1f2e;text-align:center;background:rgba(184,68,44,.15);font-weight:700">${mx===1?p:`${p}${gSup(mx)}`}</td></tr>`;
+  });
+  tbl+='</tbody></table></div>';
+  let verify='';
+  if (nums.length===2) {
+    const prod=nums[0]*nums[1],check=hv*lv;
+    verify=`<div class="erpg-verify"><strong>ચકાસણી:</strong> HCF × LCM = a × b<br><code>${gToGu(hv)} × ${gToGu(lv)} = ${gToGu(check)} &nbsp;|&nbsp; ${gToGu(nums[0])} × ${gToGu(nums[1])} = ${gToGu(prod)} ${check===prod?'✓':'✗'}</code></div>`;
+  }
+  out.style.display='block';
+  out.innerHTML=`<div class="erpg-result-title">HCF & LCM <span class="erpg-badge">${gToGu(nums.length)} સં.</span></div>
+    <h4 style="font-weight:700;margin-bottom:10px;color:#1a1f2e">પ. ૧: Prime Factorization</h4>
+    <div class="erpg-pf-grid">${pfCards}</div>
+    <h4 style="font-weight:700;margin:16px 0 10px;color:#1a1f2e">પ. ૨: ઘાત-તુલના (Power Comparison)</h4>
+    ${tbl}
+    <div class="erpg-ans-grid">
+      <div class="erpg-ans-box ghcf"><div class="glabel">ગુ.સા.અ. · HCF</div><div class="gvalue">${gToGu(hv)}</div><div class="gformula">${fmtM(hcfMap)}</div></div>
+      <div class="erpg-ans-box glcm"><div class="glabel">લ.સા.અ. · LCM</div><div class="gvalue">${gToGu(lv)}</div><div class="gformula">${fmtM(lcmMap)}</div></div>
+    </div>${verify}`;
+}
+
+document.getElementById('g-ln-btn').addEventListener('click', () => {
+  const a=document.getElementById('g-ln-a').value.trim();
+  const b=document.getElementById('g-ln-b').value.trim();
+  const c=document.getElementById('g-ln-c').value.trim();
+  const err=document.getElementById('g-ln-error'); err.style.display='none';
+  const arr=[a,b,c].filter(x=>x!=='').map(Number);
+  if (arr.length<2) { err.textContent='ઓછામાં ઓછી 2 સંખ્યા.'; err.style.display='block'; return; }
+  if (arr.some(n=>!Number.isInteger(n)||n<1)) { err.textContent='ધન પૂર્ણ સંખ્યા આવશ્યક.'; err.style.display='block'; return; }
+  gRenderHcfLcm(arr);
+});
+document.querySelectorAll('#gm2 .erpg-pill').forEach(b => b.addEventListener('click', () => {
+  const p=b.dataset.gset.split(',');
+  document.getElementById('g-ln-a').value=p[0]||''; document.getElementById('g-ln-b').value=p[1]||''; document.getElementById('g-ln-c').value=p[2]||'';
+  document.getElementById('g-ln-btn').click();
+}));
+['g-ln-a','g-ln-b','g-ln-c'].forEach(id=>document.getElementById(id).addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('g-ln-btn').click();}));
+
+/* ── MODULE 3: IRRATIONAL PROOF ── */
+function gRenderProof(n, coef, constant) {
+  const out=document.getElementById('g-ir-result');
+  const err=document.getElementById('g-ir-error'); err.style.display='none';
+  if (!Number.isInteger(n)||n<2||!gIsPrime(n)) { err.textContent='√ ની અંદર: prime ≥ 2 જ.'; err.style.display='block'; out.style.display='none'; return; }
+  let steps=[], title='', badge='';
+  const ng=gToGu(n);
+  if (!constant&&(!coef||coef===1)) {
+    title=`√${ng} અસંમેય — Proof`; badge=`√${ng}`;
+    steps=[
+      {gu:`<strong>ધારણા:</strong> √${ng} = r/s (r,s પૂર્ણાંક, s≠0)`,math:`√${n} = r / s`},
+      {gu:`<strong>સહ-અવિભાજ્ય:</strong> gcd(a,b)=1 સ્વરૂપ`,math:`√${n} = a / b , gcd(a,b) = 1`},
+      {gu:`<strong>વર્ગ:</strong> b√${ng} = a → વર્ગ`,math:`${n}b² = a²  →  a² | ${n}`},
+      {gu:`<strong>Theorem 1.2 (p=${ng}):</strong> a² | p → a | p`,math:`∴ ${n} | a  →  a = ${n}c`},
+      {gu:`a = ${ng}c મૂકો:`,math:`${n}b² = ${n}²c²  →  b² = ${n}c²  →  ${n} | b`},
+      {gu:`<strong>Contradiction:</strong> ${ng} | a અને ${ng} | b, પણ gcd(a,b)=1`,note:`→ ધારણા ખોટી. ∴ √${ng} ∉ ℚ`}
+    ];
+  } else if (!constant) {
+    const k=coef,kg=gToGu(k); title=`${kg}√${ng} અસંમેય — Proof`; badge=`${kg}√${ng}`;
+    steps=[
+      {gu:`<strong>ધારણા:</strong> ${kg}√${ng} ∈ ℚ → = a/b`,math:`${k}√${n} = a / b`},
+      {gu:`÷${kg}:`,math:`√${n} = a / (${k}b)  →  √${n} ∈ ℚ`},
+      {gu:`<strong>Contradiction:</strong> Theorem 1.3 → √${ng} ∉ ℚ`,note:`→ ધારણા ખોટી.`}
+    ];
+  } else {
+    const c=constant,cg=gToGu(c),k=coef||1,kg=gToGu(k);
+    const ke=k===1?`√${n}`:`${k}√${n}`,keg=k===1?`√${ng}`:`${kg}√${ng}`;
+    title=`${cg} + ${keg} અસંમેય — Proof`; badge=`${cg}+${keg}`;
+    steps=[
+      {gu:`<strong>ધારણા:</strong> ${cg}+${keg} ∈ ℚ → = a/b`,math:`${c} + ${ke} = a / b`},
+      {gu:`−${cg}, ÷${kg}:`,math:`√${n} = (a − ${c}b) / (${k}b)  →  √${n} ∈ ℚ`},
+      {gu:`<strong>Contradiction:</strong> √${ng} ∉ ℚ (prime ${ng})`,note:`→ ${cg}+${keg} ∉ ℚ ∎`}
+    ];
+  }
+  let conclusionText;
+  if (!constant&&(!coef||coef===1)) conclusionText=`√${ng} અસંમેય છે.`;
+  else if (!constant) conclusionText=`${gToGu(coef)}√${ng} અસંમેય છે.`;
+  else { const k=coef||1; conclusionText=`${gToGu(constant)} + ${k===1?`√${ng}`:`${gToGu(k)}√${ng}`} અસંમેય છે.`; }
+  out.style.display='block';
+  out.innerHTML=`<div class="erpg-result-title">${title} <span class="erpg-badge">${badge}</span></div>
+    <p style="font-size:12px;color:#6b6557;margin-bottom:12px;font-style:italic">Method: <strong>Proof by Contradiction (અનિષ્ટાપત્તિ)</strong></p>
+    <div class="erpg-steps">${steps.map((s,i)=>`<div class="erpg-step" style="animation-delay:${i*0.08}s">
+      <div class="erpg-step-body">
+        <div class="ggu">${s.gu}</div>
+        ${s.math?`<div class="gmath">${s.math}</div>`:''}
+        ${s.note?`<div class="gnote">${s.note}</div>`:''}
+      </div></div>`).join('')}</div>
+    <div class="erpg-conclusion">${conclusionText} <span class="erpg-qed">QED</span></div>`;
+}
+
+document.getElementById('g-ir-btn').addEventListener('click', () => {
+  const n=document.getElementById('g-ir-n').value.trim();
+  const coef=document.getElementById('g-ir-coef').value.trim();
+  const constant=document.getElementById('g-ir-const').value.trim();
+  const err=document.getElementById('g-ir-error'); err.style.display='none';
+  if (!n) { err.textContent='√ ની સંખ્યા આપો.'; err.style.display='block'; return; }
+  const nv=Number(n),cv=coef===''?null:Number(coef),kv=constant===''?null:Number(constant);
+  gRenderProof(nv,cv,kv);
+});
+document.querySelectorAll('#gm3 .erpg-pill').forEach(b => b.addEventListener('click', () => {
+  const p=b.dataset.gir.split(',');
+  document.getElementById('g-ir-n').value=p[0]||''; document.getElementById('g-ir-coef').value=p[1]||''; document.getElementById('g-ir-const').value=p[2]||'';
+  document.getElementById('g-ir-btn').click();
+}));
+['g-ir-n','g-ir-coef','g-ir-const'].forEach(id=>document.getElementById(id).addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('g-ir-btn').click();}));
+</script>
+</body>
+</html>

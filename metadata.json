@@ -1,0 +1,6 @@
+{
+  "name": "Aarsi AI Education",
+  "description": "Transforming Education with AI & Smart Technology. A professional educational web blog, AI tools system, teacher templates, and school ERP ecosystem.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
